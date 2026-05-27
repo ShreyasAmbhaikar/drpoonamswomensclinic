@@ -1,0 +1,25 @@
+# Ferlix - IVF & Fertility Clinic
+
+## About Us
+Ferlix is a leading IVF and fertility clinic dedicated to helping families grow. With compassionate care and cutting-edge science, we guide our patients through every step of their parenthood journey. Our success rates are among the highest in the field, and we specialize in personalized treatment plans.
+
+## Services
+- **In Vitro Fertilization (IVF)**: Fertilizing an egg outside the body and transferring the embryo to the uterus.
+- **Intrauterine Insemination (IUI)**: Placing sperm directly into the uterus during ovulation to increase the chance of fertilization.
+- **Fertility Testing**: Comprehensive testing to identify root causes of infertility.
+- **Egg & Sperm Freezing**: Cryopreservation allowing you to freeze eggs or sperm for future family planning.
+
+## Key Statistics
+- 1000+ Successful Pregnancies
+- 75% IVF Success Rate
+- 15+ Years of Experience
+
+## Pricing Plans
+- **Basic ($49/month)**: Initial consultation, basic testing, support group, lifestyle advice, one monthly visit.
+- **Standard ($59/month)**: Basic features + advanced testing, medication management, priority scheduling, counseling.
+- **Advanced ($69/month)**: Standard features + full IVF monitoring, 24/7 specialist access, acupuncture, extended embryo storage.
+
+## Contact Information
+- **Phone**: (+01) 987 828 745
+- **Hours**: Monday to Friday (8am - 7pm), Saturday (9am - 4pm), Sunday (Closed)
+- **Booking**: Available through our website's contact form.

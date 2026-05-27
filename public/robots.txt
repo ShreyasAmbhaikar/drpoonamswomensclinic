@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# AI Crawlers / LLMs
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Anthropic-ai
+Allow: /
+User-agent: OmgiliBot
+Allow: /
+User-agent: Omgili
+Allow: /
+User-agent: FacebookBot
+Allow: /
+
+Sitemap: https://yourdomain.com/sitemap.xml

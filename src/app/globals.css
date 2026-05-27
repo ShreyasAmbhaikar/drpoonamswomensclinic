@@ -1,26 +1,77 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-primary: #242736;
+  --color-secondary: #F8E6D8;
+  --color-accent: #5A4A66;
+  --color-accent-secondary: #D8E4EA;
+  --color-text: #4F4D4D;
+  --color-background: #FBF6F2;
+  --color-divider: #2D322C1a;
+  --color-dark-divider: #FFFFFF1a;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-onest: "Onest", sans-serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --radius-btn: 10px;
+  --radius-card: 20px;
+  --radius-section: 30px;
+
+  --container-max-width: 1300px;
+
+  --animate-fade-in-up: fadeInUp 0.8s ease-in-out forwards;
+  --animate-rotate-metal: rotateMetal 30s linear infinite;
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, 100%, 0);
+    }
+    100% {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes rotateMetal {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-onest);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+}
+
+@layer utilities {
+  .gradient-bg-metal {
+    position: relative;
+  }
+  .gradient-bg-metal::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: linear-gradient(102deg, 
+      #D8E4EA -2.83%, 
+      rgba(216,228,234,0.5) 30.19%, 
+      rgba(216,228,234,0.2) 53.89%, 
+      rgba(248,230,216,0.5) 100.11%
+    );
+  }
 }

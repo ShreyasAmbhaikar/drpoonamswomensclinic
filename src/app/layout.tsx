@@ -1,37 +1,47 @@
 import type { Metadata } from "next";
 import { Onest } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { FloatingWidgets } from "@/components/layout/FloatingWidgets";
+import { Header } from "@/components/landing/Header";
+import { Footer } from "@/components/landing/Footer";
+import { FloatingWidgets } from "@/components/landing/FloatingWidgets";
 
 const onest = Onest({
   variable: "--font-onest",
   subsets: ["latin"],
-  display: "swap",
+  display: "fallback",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
-  title: "Ferlix – IVF & Fertility Clinic | Trusted Fertility Treatments",
-  description: "Ferlix is a leading IVF and fertility clinic providing compassionate care, personalized treatment plans, and cutting-edge reproductive technology.",
-  keywords: ["IVF", "Fertility Clinic", "In Vitro Fertilization", "Surrogacy", "Egg Freezing", "Sperm Freezing"],
-  authors: [{ name: "Ferlix Clinic" }],
-  creator: "Ferlix",
-  publisher: "Ferlix",
+  title: "Dr Poonam's Women's Clinic | Best Gynecologist in Keshav Nagar",
+  description: "Dr Poonam's Women's Clinic is Pune's leading gynecologist clinic in Keshav Nagar, Mundhwa. Expert pregnancy care, delivery, PCOD, & infertility treatment.",
+  keywords: [
+    "gynecologist in keshav nagar",
+    "gynecologist keshav nagar",
+    "gynecologist in mundhwa",
+    "best gynecologist in pune",
+    "obstetrician gynecologist in pune",
+    "pregnancy care clinic keshav nagar",
+    "PCOD treatment keshav nagar",
+    "IUI specialist pune",
+    "normal delivery doctor keshav nagar"
+  ],
+  authors: [{ name: "Dr Poonam's Women's Clinic" }],
+  creator: "Dr Poonam",
+  publisher: "Dr Poonam",
   robots: "index, follow, max-image-preview:large",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://yourdomain.com/",
-    siteName: "Ferlix",
-    title: "Ferlix – IVF & Fertility Clinic",
-    description: "Hope, care, science your IVF journey starts here.",
+    siteName: "Dr Poonam's Women's Clinic",
+    title: "Dr Poonam's Women's Clinic | Best Gynecologist in Keshav Nagar",
+    description: "Dr Poonam's Women's Clinic is a top gynecologist clinic in Keshav Nagar, Pune. Led by senior consultant Obstetrician-Gynecologist Dr. Poonam.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ferlix – IVF & Fertility Clinic",
-    description: "Hope, care, science your IVF journey starts here.",
+    title: "Dr Poonam's Women's Clinic | Best Gynecologist in Keshav Nagar",
+    description: "Dr Poonam's Women's Clinic is a top gynecologist clinic in Keshav Nagar, Pune. Led by senior consultant Obstetrician-Gynecologist Dr. Poonam.",
   },
 };
 
@@ -42,25 +52,40 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "MedicalClinic",
-    "name": "Ferlix – IVF & Fertility Clinic",
+    "@type": "Physician",
+    "name": "Dr Poonam's Women's Clinic",
     "url": "https://yourdomain.com",
     "logo": "https://yourdomain.com/images/logo-women-health.svg",
-    "description": "Ferlix is a leading IVF and fertility clinic providing compassionate care and personalized treatment plans.",
-    "telephone": "+01-987-828-745",
-    "openingHours": "Mo,Tu,We,Th,Fr 08:00-19:00 Sa 09:00-16:00",
+    "image": "https://yourdomain.com/images/logo-women-health.svg",
+    "description": "Dr Poonam's Women's Clinic is a leading gynecologist clinic in Keshav Nagar, Pune. Led by Dr. Poonam (MBBS, DGO, PGDMCH), senior consultant in pregnancy care, normal delivery, infertility, PCOD, and laparoscopic procedures.",
+    "telephone": "097119 29529",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Shop No 33, Shopping Complex, Mantra Mesmer Rd, Keshav Nagar, Mundhwa",
+      "addressLocality": "Pune",
+      "addressRegion": "Maharashtra",
+      "postalCode": "411036",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "18.520412",
+      "longitude": "73.9392261"
+    },
+    "openingHours": "Mo,Tu,We,Th,Fr,Sa 10:00-14:00, 18:00-21:00",
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "5",
-      "reviewCount": "4000"
+      "ratingValue": "5.0",
+      "reviewCount": "42"
     },
-    "medicalSpecialty": "Fertility Clinic"
+    "medicalSpecialty": "ObstetricianGynecologist"
   };
 
   return (
     <html lang="en" className={`${onest.variable} scroll-smooth antialiased`}>
       <head>
         <meta name="theme-color" content="#242736" />
+        <link rel="manifest" href="/manifest.webmanifest" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

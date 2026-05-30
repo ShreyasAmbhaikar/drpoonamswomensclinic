@@ -1,10 +1,10 @@
 import React, { Suspense } from "react";
-import PageHeader from "@/components/layout/PageHeader";
-import BlogListSection from "@/components/sections/BlogListSection";
+import PageHeader from "@/components/landing/PageHeader";
+import BlogListSection from "@/components/landing/BlogListSection";
 
 export const metadata = {
-  title: "Latest Blogs & Health Tips – Ferlix",
-  description: "Stay updated with expert articles on pregnancy care, gynecological screening, hormonal balance, IVF, and fertility treatments from Dr. Priya Sharma.",
+  title: "Latest Health Articles & Insights | Dr Poonam's Women's Clinic",
+  description: "Stay updated with expert health articles on pregnancy care, gynecological screening, normal delivery, and wellness tips from Dr. Poonam.",
   alternates: {
     canonical: "/blog/",
   },

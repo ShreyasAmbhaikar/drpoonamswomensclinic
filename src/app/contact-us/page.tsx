@@ -1,10 +1,10 @@
 import React from "react";
-import PageHeader from "@/components/layout/PageHeader";
+import PageHeader from "@/components/landing/PageHeader";
 import { Clock, MapPin, Phone, Mail } from "lucide-react";
 
 export const metadata = {
-  title: "Contact Us – Ferlix",
-  description: "Get in touch with Ferlix IVF & Fertility Clinic. Reach out for personalized IVF support, schedule hours, or send us a message to start your parenthood journey.",
+  title: "Contact Us | Dr Poonam's Women's Clinic",
+  description: "Get in touch with Dr Poonam's Women's Clinic in Keshav Nagar, Pune. Reach out for expert pregnancy care, delivery consultations, PCOD support, and fertility care.",
   alternates: {
     canonical: "/contact-us/",
   },
@@ -34,16 +34,15 @@ export default function ContactUsPage() {
                 <h3 className="text-[24px] font-bold text-primary mb-4">Schedule Hours</h3>
                 <ul className="space-y-3 text-text">
                   <li className="flex justify-between border-b border-divider/20 pb-2">
-                    <span className="capitalize">Monday - Thursday</span>
-                    <span className="font-semibold text-primary">08:00 - 18:00</span>
-                  </li>
-                  <li className="flex justify-between border-b border-divider/20 pb-2">
-                    <span className="capitalize">Friday</span>
-                    <span className="font-semibold text-primary">08:00 - 18:00</span>
+                    <span className="capitalize font-semibold text-primary">Monday - Saturday</span>
+                    <div className="flex flex-col items-end text-right font-medium">
+                      <span>10:00 - 14:00</span>
+                      <span>18:00 - 21:00</span>
+                    </div>
                   </li>
                   <li className="flex justify-between pb-1">
-                    <span className="capitalize">Saturday</span>
-                    <span className="font-semibold text-primary">08:00 - 18:00</span>
+                    <span className="capitalize font-semibold text-primary">Sunday</span>
+                    <span className="font-semibold text-accent">Closed</span>
                   </li>
                 </ul>
               </div>
@@ -54,9 +53,9 @@ export default function ContactUsPage() {
                   <MapPin className="w-7 h-7" />
                 </div>
                 <h3 className="text-[24px] font-bold text-white mb-2">Our Locations</h3>
-                <p className="text-white/80 mb-6 text-[15px]">Providing expert IVF care locally.</p>
+                <p className="text-white/80 mb-6 text-[15px]">Providing expert gynecologist care locally.</p>
                 <p className="text-white font-semibold leading-[1.6] mt-auto">
-                  123 Ipsum Road, Loremton Dolorshire, LO1 2RM, United Kingdom
+                  Shop No 33, Shopping Complex, Mantra Mesmer Rd, Keshav Nagar, Mundhwa, Pune, Maharashtra 411036
                 </p>
               </div>
 
@@ -66,21 +65,14 @@ export default function ContactUsPage() {
                   <Phone className="w-7 h-7" />
                 </div>
                 <h3 className="text-[24px] font-bold text-white mb-2">Contact Us</h3>
-                <p className="text-white/80 mb-6 text-[15px]">Reach out for personalized IVF support.</p>
+                <p className="text-white/80 mb-6 text-[15px]">Reach out for pregnancy and gynae support.</p>
                 <div className="space-y-3 mt-auto">
                   <a 
-                    href="tel:+91-258-8520" 
+                    href="tel:09711929529" 
                     className="flex items-center gap-3 text-white font-bold hover:text-white/80 transition-colors duration-300"
                   >
                     <Phone className="w-4 h-4 text-white" />
-                    <span>+91-258-8520</span>
-                  </a>
-                  <a 
-                    href="mailto:info@domainname.com" 
-                    className="flex items-center gap-3 text-white font-bold hover:text-white/80 transition-colors duration-300"
-                  >
-                    <Mail className="w-4 h-4 text-white" />
-                    <span>info@domainname.com</span>
+                    <span>097119 29529</span>
                   </a>
                 </div>
               </div>
@@ -94,9 +86,9 @@ export default function ContactUsPage() {
           <div className="container mx-auto px-4 max-w-[1320px]">
             <div className="w-full h-[450px] lg:h-[550px] rounded-[30px] overflow-hidden border border-divider/10 shadow-lg relative">
               <iframe 
-                src="https://maps.google.com/maps?q=London%20Eye,%20London,%20United%20Kingdom&t=&z=13&ie=UTF8&iwloc=&output=embed" 
-                title="London Eye, London, United Kingdom" 
-                aria-label="London Eye, London, United Kingdom"
+                src="https://maps.google.com/maps?q=Dr%20Poonam's%20Women's%20Clinic%20Keshav%20Nagar%20Pune&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                title="Dr Poonam's Women's Clinic, Keshav Nagar, Pune" 
+                aria-label="Dr Poonam's Women's Clinic, Keshav Nagar, Pune"
                 className="w-full h-full border-0 absolute inset-0"
                 allowFullScreen
                 loading="lazy"

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 
 export const metadata = {
-  title: "Page not found – Ferlix",
+  title: "Page Not Found | Dr Poonam's Women's Clinic",
   description: "The page you are looking for does not exist.",
 };
 

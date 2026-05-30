@@ -1,0 +1,17 @@
+{
+  "name": "Ferlix IVF & Fertility Clinic",
+  "short_name": "Ferlix IVF",
+  "description": "Compassionate care and cutting-edge science for your IVF journey.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#242736",
+  "icons": [
+    {
+      "src": "/images/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

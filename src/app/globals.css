@@ -20,6 +20,16 @@
 
   --animate-fade-in-up: fadeInUp 0.8s ease-in-out forwards;
   --animate-rotate-metal: rotateMetal 30s linear infinite;
+  --animate-float: float 4s ease-in-out infinite;
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
   
   @keyframes fadeInUp {
     0% {

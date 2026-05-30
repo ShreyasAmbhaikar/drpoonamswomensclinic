@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import PageHeader from "@/components/layout/PageHeader";
+import PageHeader from "@/components/landing/PageHeader";
 import { BLOG_POSTS } from "@/lib/blog-data";
 import { Clock, User, ArrowRight, Search, Heart } from "lucide-react";
 import ShareButton from "@/components/ui/ShareButton";
@@ -21,13 +21,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const baseUrl = "https://yourdomain.com";
 
   return {
-    title: `${post.title} – Ferlix`,
+    title: `${post.title} | Dr Poonam's Women's Clinic`,
     description: post.excerpt,
     alternates: {
       canonical: `/blog/${post.slug}/`,
     },
     openGraph: {
-      title: `${post.title} – Ferlix`,
+      title: `${post.title} | Dr Poonam's Women's Clinic`,
       description: post.excerpt,
       type: "article",
       publishedTime: post.date,
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     twitter: {
       card: "summary_large_image",
-      title: `${post.title} – Ferlix`,
+      title: `${post.title} | Dr Poonam's Women's Clinic`,
       description: post.excerpt,
       images: [`${baseUrl}${post.image}`],
     },

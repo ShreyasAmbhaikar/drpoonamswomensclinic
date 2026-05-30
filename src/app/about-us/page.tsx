@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import PageHeader from "@/components/layout/PageHeader";
+import PageHeader from "@/components/landing/PageHeader";
 import { CheckCircle } from "lucide-react";
 
 export const metadata = {
-  title: "About Us – Ferlix",
-  description: "Learn more about Ferlix IVF & Fertility Clinic. Meet our lead fertility specialist Dr. Priya Sharma, explore our state-of-the-art facility, and understand our compassionate approach.",
+  title: "About Us | Dr Poonam's Women's Clinic",
+  description: "Learn more about Dr Poonam's Women's Clinic in Keshav Nagar, Pune. Meet senior consultant Obstetrician-Gynecologist Dr. Poonam (MBBS, DGO, PGDMCH) and explore our patient-first approach.",
   alternates: {
     canonical: "/about-us/",
   },
@@ -29,7 +29,7 @@ export default function AboutUsPage() {
         </svg>
       ),
       title: "Patient-First Care",
-      desc: "Every fertility journey is deeply personal. We customize every test and treatment plan around your physical comfort and emotional wellbeing.",
+      desc: "Every healthcare journey is deeply personal. We customize every treatment plan around your physical comfort and emotional wellbeing.",
     },
     {
       number: "02",
@@ -45,8 +45,8 @@ export default function AboutUsPage() {
           <path d="M6 32H12" stroke="#5A4A66" strokeWidth="2.2" strokeLinecap="round" />
         </svg>
       ),
-      title: "Scientific Excellence",
-      desc: "Our labs are equipped with international-grade incubators, cleanroom ventilation, and advanced micro-manipulation tools for maximum IVF success.",
+      title: "Clinical Excellence",
+      desc: "Our clinic offers state-of-the-art diagnostic screening and treatment options for pregnancy care, fertility support, and laparoscopic surgeries.",
     },
     {
       number: "03",
@@ -58,7 +58,7 @@ export default function AboutUsPage() {
         </svg>
       ),
       title: "Complete Transparency",
-      desc: "No hidden charges, no unnecessary testing. We explain every clinical finding clearly so you can make informed decisions with full confidence.",
+      desc: "No hidden charges or unnecessary testing. We explain every clinical finding clearly so you can make informed decisions with full confidence.",
     },
   ];
 
@@ -74,16 +74,16 @@ export default function AboutUsPage() {
               
               {/* Left Content */}
               <div>
-                <h4 className="text-accent text-[16px] font-bold tracking-wider uppercase mb-3">Welcome to Ferlix</h4>
+                <h4 className="text-accent text-[16px] font-bold tracking-wider uppercase mb-3">About Our Clinic</h4>
                 <h2 className="text-[36px] md:text-[46px] font-bold text-primary mb-6 leading-[1.2]">
-                  Dedicated to your journey toward growing families
+                  Dedicated to providing compassionate women's healthcare
                 </h2>
                 <div className="text-text space-y-4 mb-8">
                   <p>
-                    At Ferlix, we believe that building a family is one of life’s most profound hopes. Founded as a center of clinical excellence, we have brought together leading reproductive specialists, advanced technologies, and warm support services under one roof.
+                    At Dr Poonam's Women's Clinic, we believe that comprehensive healthcare is one of life’s most profound needs. Founded as a center of clinical excellence in Keshav Nagar, Pune, we bring together expert obstetric and gynecological care under one roof.
                   </p>
                   <p>
-                    Whether you are starting with basic diagnostic checks, exploring ovulation induction, or needing advanced IVF/ICSI cycles, our team walks hand-in-hand with you. We keep our process simple, stress-free, and centered entirely around you.
+                    Whether you are starting with basic prenatal checks, looking for specialized management of PCOD/PCOS, seeking support for infertility/IUI, or needing advanced laparoscopic procedures, our team walks hand-in-hand with you. We keep our process simple, supportive, and centered entirely around you.
                   </p>
                 </div>
                 
@@ -91,19 +91,19 @@ export default function AboutUsPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-accent shrink-0" />
-                    <span className="font-semibold text-primary">85% IVF Success Rate</span>
+                    <span className="font-semibold text-primary">+10 Years of Experience</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-accent shrink-0" />
-                    <span className="font-semibold text-primary">In-house Diagnostic Labs</span>
+                    <span className="font-semibold text-primary">Normal Delivery Specialist</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-accent shrink-0" />
-                    <span className="font-semibold text-primary">24/7 Patient Concierge</span>
+                    <span className="font-semibold text-primary">Infertility, IUI & IVF Guidance</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-accent shrink-0" />
-                    <span className="font-semibold text-primary">Compassionate Counselors</span>
+                    <span className="font-semibold text-primary">Laparoscopic Procedures</span>
                   </div>
                 </div>
               </div>
@@ -113,15 +113,15 @@ export default function AboutUsPage() {
                 <div className="rounded-[30px] overflow-hidden shadow-xl aspect-[4/3] relative">
                   <Image
                     src="/images/about-clinic-exterior.webp"
-                    alt="Ferlix IVF Clinic Exterior"
+                    alt="Dr Poonam's Women's Clinic Exterior"
                     fill
                     className="object-cover"
                   />
                 </div>
                 {/* Floating badge */}
                 <div className="absolute -bottom-6 -left-6 bg-white text-primary p-6 rounded-[20px] shadow-xl border border-divider/10 hidden md:block max-w-[210px] animate-fade-in-up">
-                  <h5 className="text-[36px] font-extrabold text-[#e87c7c] leading-none mb-2">15+</h5>
-                  <p className="text-[13px] leading-snug text-text font-bold uppercase tracking-wider">Years of Trusted Reproductive Excellence</p>
+                  <h5 className="text-[36px] font-extrabold text-[#e87c7c] leading-none mb-2">+10</h5>
+                  <p className="text-[13px] leading-snug text-text font-bold uppercase tracking-wider">Years of Trusted Women's Healthcare</p>
                 </div>
               </div>
 
@@ -139,7 +139,7 @@ export default function AboutUsPage() {
                 <div className="relative w-full max-w-[400px] aspect-[4/5] rounded-[30px] overflow-hidden shadow-lg border-4 border-white">
                   <Image
                     src="/images/about-doctor-priya.webp"
-                    alt="Dr. Priya Sharma"
+                    alt="Dr. Poonam"
                     fill
                     className="object-cover"
                   />
@@ -149,8 +149,8 @@ export default function AboutUsPage() {
               {/* Doctor Details */}
               <div className="lg:col-span-7">
                 <h4 className="text-accent text-[16px] font-bold tracking-wider uppercase mb-3">Meet Our Expert</h4>
-                <h2 className="text-[36px] md:text-[44px] font-bold text-primary mb-2">Dr. Priya Sharma</h2>
-                <p className="text-[18px] text-accent font-semibold mb-6">Chief Fertility & IVF Consultant</p>
+                <h2 className="text-[36px] md:text-[44px] font-bold text-primary mb-2">Dr. Poonam</h2>
+                <p className="text-[18px] text-accent font-semibold mb-6">Senior Consultant Obstetrician & Gynecologist</p>
                 
                 {/* Qualifications box */}
                 <div className="bg-white rounded-[20px] p-6 border border-divider/10 shadow-sm mb-6">
@@ -158,26 +158,26 @@ export default function AboutUsPage() {
                   <ul className="space-y-3 text-text">
                     <li className="flex items-start gap-3">
                       <span className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0"></span>
-                      <span><strong>MBBS</strong> – All India Institute of Medical Sciences (AIIMS), New Delhi</span>
+                      <span><strong>MBBS</strong> – Professional Medical Degree</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0"></span>
-                      <span><strong>MS (Obstetrics & Gynaecology)</strong> – Premium Medical University</span>
+                      <span><strong>DGO</strong> – Diploma in Gynaecology and Obstetrics</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0"></span>
-                      <span><strong>Fellowship in Reproductive Medicine</strong> – National Fertility Center, Singapore</span>
+                      <span><strong>PGDMCH</strong> – Post Graduate Diploma in Maternal and Child Health</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0"></span>
-                      <span><strong>Member</strong> of the Indian Society of Assisted Reproduction (ISAR)</span>
+                      <span><strong>Over 10 Years</strong> of specialized clinical practice in Obstetric and Gynecological Care</span>
                     </li>
                   </ul>
                 </div>
 
                 <div className="text-text italic border-l-4 border-accent pl-4 py-1 leading-[1.6]">
                   <p>
-                    &ldquo;Our mission at Ferlix is simple: to combine state-of-the-art reproductive science with human warmth. We do not just treat infertility; we support you in building your future family with respect, empathy, and absolute dedication.&rdquo;
+                    &ldquo;Our mission at Dr Poonam's Women's Clinic is simple: to combine clinical excellence with warm, personalized attention. We walk alongside every woman to ensure her safety, comfort, and wellbeing at every milestone.&rdquo;
                   </p>
                 </div>
               </div>

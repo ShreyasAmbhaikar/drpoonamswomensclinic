@@ -9,32 +9,60 @@ import "swiper/css";
 
 const TESTIMONIALS = [
   {
-    name: "Floyd Miles",
-    role: "Product Designer",
-    image: "/images/author-2.webp",
-    text: "The doctors, staff, and counselors were so supportive throughout. Everything was explained in detail, and we felt genuinely.",
-    rating: 5
+    name: "Mayuri Mehta",
+    role: "Verified Patient",
+    image: "/images/review-1-mayuri.webp",
+    text: "Had a very good experience with Dr. Poonam. She was professional, patient, and explained everything clearly. She listened carefully to my concerns and made me feel comfortable throughout the consultation. Her guidance was very helpful and reassuring. Highly recommend her to anyone looking for a knowledgeable and caring gynac.",
+    rating: 5,
+    isLocalGuide: false
   },
   {
-    name: "Floyd Miles",
-    role: "Product Designer",
-    image: "/images/author-1.webp",
-    text: "The doctors, staff, and counselors were so supportive throughout. Everything was explained in detail, and we felt genuinely.",
-    rating: 5
+    name: "Kartika Gurjar",
+    role: "Verified Patient",
+    image: "/images/review-5-kartika.webp",
+    text: "I'm taking my treatment from Dr. Poonam and honestly she feels like home very comfortable very kind and a good listener also now a days doctors are not available on call or whatsapp but she is available all the time inbetween you have any query you can reach out to her without any hesitation..\nAnd talking about treatment i personally found very helpful and effective.",
+    rating: 5,
+    isLocalGuide: false
   },
   {
-    name: "Floyd Miles",
-    role: "Product Designer",
-    image: "/images/author-4.webp",
-    text: "The doctors, staff, and counselors were so supportive throughout. Everything was explained in detail, and we felt genuinely.",
-    rating: 5
+    name: "Govinda Budhvant",
+    role: "Verified Patient",
+    image: "/images/review-3-govinda.webp",
+    text: "I had a wonderful experience with Dr. Poonam. As a new patient, I was a bit nervous, but she made us feel completely at ease. She took the time to listen to all our concerns without rushing and explained everything in a way that was easy to understand. Highly recommend her for anyone looking for a knowledgeable and compassionate doctor.",
+    rating: 5,
+    isLocalGuide: true
   },
   {
-    name: "Floyd Miles",
-    role: "Product Designer",
-    image: "/images/author-3.webp",
-    text: "The doctors, staff, and counselors were so supportive throughout. Everything was explained in detail, and we felt genuinely.",
-    rating: 5
+    name: "Amani Borra",
+    role: "Verified Patient",
+    image: "/images/review-6-amani.webp",
+    text: "Here is the honest review I am sharing\nDr. Poonam Mam I have never seen a doctor like you.\nMam is very very much friendly and her first priority is the treatment of patient I have consulted her 2 times she is very responsible with her duities and she treated me very well and I suggest Dr.Poonam is the best for any Gynec related problems\nAlso Mam thank you soo much for the best treatment.",
+    rating: 5,
+    isLocalGuide: false
+  },
+  {
+    name: "Shrutika Bhute",
+    role: "Verified Patient",
+    image: "/images/review-2-shrutika.webp",
+    text: "I had a wonderful experience with Dr. Poonam. From the start, she made me feel completely at ease. She took the time to listen to all my concerns and explained everything in a way that was easy to understand. Highly recommend for anyone looking for a comfortable and supportive environment!",
+    rating: 5,
+    isLocalGuide: false
+  },
+  {
+    name: "Prapti Nirmal",
+    role: "Verified Patient",
+    image: "/images/review-7-prapti.webp",
+    text: "Best gynacologist in keshav nagar. She guided me well and very caring",
+    rating: 5,
+    isLocalGuide: true
+  },
+  {
+    name: "Shivkanya Dongare",
+    role: "Verified Patient",
+    image: "/images/review-4-shivkanya.webp",
+    text: "I had a very good experience with Dr. Poonam. She listens carefully to the patient's concerns and provide clear, thoughful guidance for diagnosis. Instead of jumping to conclusions, she follows step by step approach to treatment. She is also available on phone, which is quite rare and truly reassuring.",
+    rating: 5,
+    isLocalGuide: false
   }
 ];
 
@@ -104,9 +132,9 @@ export const TestimonialsSection = () => {
             className="w-full"
           >
             {TESTIMONIALS.map((item, index) => (
-              <SwiperSlide key={index} className="h-auto">
+              <SwiperSlide key={index} className="!flex h-auto">
                 <div 
-                  className="border rounded-[20px] p-[40px] h-full flex flex-col justify-between"
+                  className="border rounded-[20px] p-[40px] w-full flex flex-col justify-between"
                   style={{ 
                     backgroundColor: "#2d303f",
                     borderColor: "rgba(255, 255, 255, 0.1)"
@@ -132,26 +160,52 @@ export const TestimonialsSection = () => {
                       ))}
                     </div>
 
-                    {/* Quote Text */}
-                    <p className="text-[19px] font-normal leading-[1.6em] text-white mb-[30px]">
+                    {/* Quote Text Clamped to 6 lines */}
+                    <p className="text-[19px] font-normal leading-[1.6em] text-white mb-[30px] line-clamp-6">
                       “{item.text}”
                     </p>
                   </div>
 
-                  {/* Author Info */}
-                  <div className="flex items-center gap-[15px] pt-[20px] border-t border-white/10 mt-[20px]">
-                    <div className="w-[50px] h-[50px] rounded-full overflow-hidden relative shrink-0">
-                      <Image 
-                        src={item.image} 
-                        alt={item.name} 
-                        fill 
-                        className="object-cover"
-                        sizes="50px"
-                      />
+                  {/* Author Info with fixed height and top-alignment for perfect alignment of divider lines */}
+                  <div className="flex items-start gap-[15px] pt-[20px] border-t border-white/10 mt-[20px] h-[95px]">
+                    <div className="w-[50px] h-[50px] rounded-full relative shrink-0">
+                      <div className="w-full h-full rounded-full overflow-hidden relative">
+                        <Image 
+                          src={item.image} 
+                          alt={item.name} 
+                          fill 
+                          className="object-cover"
+                          sizes="50px"
+                        />
+                      </div>
+                      {item.isLocalGuide && (
+                        <div className="absolute bottom-0 right-0 w-[18px] h-[18px] rounded-full flex items-center justify-center border border-white"
+                          style={{
+                            background: "radial-gradient(circle, #FFA000 0%, #FF6F00 100%)",
+                            boxShadow: "0 2px 4px rgba(0,0,0,0.2)"
+                          }}
+                        >
+                          <svg className="w-[10px] h-[10px] fill-white" viewBox="0 0 24 24">
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                        </div>
+                      )}
                     </div>
                     <div>
                       <h4 className="text-[18px] font-bold text-white leading-tight mb-0.5">{item.name}</h4>
-                      <p className="text-[14px] text-white/60 m-0 leading-normal">{item.role}</p>
+                      {item.isLocalGuide ? (
+                        <div className="flex flex-col items-start gap-1">
+                          <p className="text-[14px] text-white/60 m-0 leading-normal">{item.role}</p>
+                          <span className="inline-flex items-center gap-1 text-[11px] font-bold text-[#FFB300] bg-[#FFB300]/10 px-2 py-0.5 rounded-full border border-[#FFB300]/30 uppercase tracking-wider">
+                            <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24">
+                              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            Local Guide
+                          </span>
+                        </div>
+                      ) : (
+                        <p className="text-[14px] text-white/60 m-0 leading-normal">{item.role}</p>
+                      )}
                     </div>
                   </div>
 

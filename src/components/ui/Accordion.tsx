@@ -12,7 +12,7 @@ interface AccordionProps {
 }
 
 export default function Accordion({ items }: AccordionProps) {
-  const [activeIndex, setActiveIndex] = useState<number | null>(1); // Default second item active, as per original
+  const [activeIndex, setActiveIndex] = useState<number | null>(null); // Default all items closed
 
   const toggleAccordion = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -26,20 +26,22 @@ export default function Accordion({ items }: AccordionProps) {
         return (
           <div
             key={index}
-            className="rounded-[10px] bg-white overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.03)] border border-[#EBEBEB]"
+            className={`rounded-[16px] overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.03)] border transition-all duration-300 ${
+              isActive ? 'border-accent/30 shadow-[0_4px_20px_rgba(90,74,102,0.08)]' : 'border-[#EBEBEB]'
+            }`}
           >
             <button
               className={`w-full flex items-center justify-between p-[20px_30px] text-left transition-colors duration-300 cursor-pointer ${
-                isActive ? 'bg-secondary/30 text-accent font-bold' : 'bg-white text-primary hover:text-accent font-semibold'
+                isActive ? 'bg-accent/5 text-accent font-bold' : 'bg-white text-primary hover:text-accent font-semibold'
               }`}
               onClick={() => toggleAccordion(index)}
             >
               <span className="text-[17px] md:text-[19px]">{item.question}</span>
-              <span className={`flex-shrink-0 ml-4 transition-transform duration-300 ${isActive ? 'text-accent' : 'text-primary/60'}`}>
+              <span className={`flex-shrink-0 ml-4 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${isActive ? 'bg-accent text-white rotate-0' : 'bg-[#F5F0EB] text-primary/60 rotate-0'}`}>
                 {isActive ? (
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="12" x2="6" y2="12"></line></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="12" x2="6" y2="12"></line></svg>
                 ) : (
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                 )}
               </span>
             </button>

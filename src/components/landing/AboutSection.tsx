@@ -81,7 +81,7 @@ export const AboutSection = () => {
                 <div className="bg-white rounded-[24px] p-6 shadow-[0_15px_40px_rgba(0,0,0,0.04)] border border-divider/15 flex flex-col items-center justify-center text-center w-full max-w-[240px]">
                   {/* Overlapping Avatars */}
                   <div className="flex -space-x-3 mb-4">
-                    {['author-1', 'author-2', 'author-3', 'author-4'].map((avatar, i) => (
+                    {['review-1-mayuri', 'review-2-shrutika', 'review-6-amani', 'review-5-kartika'].map((avatar, i) => (
                       <div 
                         key={i} 
                         className="w-[42px] h-[42px] rounded-full border-2 border-white relative overflow-hidden shadow-sm shrink-0"

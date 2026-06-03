@@ -22,15 +22,26 @@ const OUR_SERVICES = [
   { label: "MTP, D & E Services", href: "/mtp-d-e-services-in-keshav-nagar/" },
   { label: "Tubal Ligation & Reversal", href: "/tubal-ligation-reversal-in-keshav-nagar/" },
   { label: "Laparoscopic Procedures", href: "/laparoscopic-procedures-in-keshav-nagar/" },
+  { label: "Hysteroscopy", href: "/hysteroscopy-in-keshav-nagar/" },
+  { label: "Pregnancy Care", href: "/pregnancy-care-in-keshav-nagar/" },
+  { label: "High Risk Pregnancy Management", href: "/high-risk-pregnancy-management-in-keshav-nagar/" },
+  { label: "Pubertal Counselling", href: "/pubertal-counselling-in-keshav-nagar/" },
+  { label: "Menstrual Hygiene", href: "/menstrual-hygiene-in-keshav-nagar/" },
+  { label: "Contraception Advice", href: "/contraception-advice-in-keshav-nagar/" },
+  { label: "Lactational Counselling", href: "/lactational-counselling-in-keshav-nagar/" },
+  { label: "Family Planning Center", href: "/family-planning-center-in-keshav-nagar/" },
+  { label: "Pelvic Infections", href: "/pelvic-infections-treatment-in-keshav-nagar/" },
+  { label: "Cancer Screening", href: "/cancer-screening-in-keshav-nagar/" },
+  { label: "Addressing Menstrual Cycle Problems", href: "/menstrual-cycle-problems-in-keshav-nagar/" },
 ];
 
 export const Footer = () => {
   return (
     <footer className="bg-primary pt-[100px] text-white">
       <div className="container mx-auto max-w-[1300px] px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[40px] lg:gap-[30px] mb-[60px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-[40px] lg:gap-[30px] mb-[60px]">
           {/* Logo & About */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 lg:col-span-3">
             <Link href="/best-gynecologist-in-keshav-nagar/" prefetch={false} className="flex items-center gap-3 shrink-0">
               <Image
                 src="/images/logo-emblem-1.webp"
@@ -44,15 +55,15 @@ export const Footer = () => {
                 <span className="text-[10px] md:text-[12px] font-bold text-accent-secondary tracking-wider leading-none mt-1.5 font-onest uppercase">WOMEN'S CLINIC</span>
               </div>
             </Link>
-            <p className="text-white/80 text-[16px] leading-[1.6em]">
+            <p className="text-white/80 text-[15px] leading-[1.6em]">
               Dr Poonam's Women's Clinic provides expert obstetric and gynecological care in Keshav Nagar, Pune. Led by Dr. Poonam with +10 years of experience, we specialize in normal delivery, IUI/IVF care, PCOD, and laparoscopic procedures.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div className="flex flex-col gap-6 lg:pl-10">
+          <div className="flex flex-col gap-6 lg:col-span-2 lg:pl-4">
             <h3 className="text-[20px] font-semibold text-white">Quick Links</h3>
-            <ul className="flex flex-col gap-4">
+            <ul className="flex flex-col gap-3">
               {QUICK_LINKS.map((link) => (
                 <li key={link.label}>
                   <Link 
@@ -68,9 +79,9 @@ export const Footer = () => {
           </div>
 
           {/* Our Services */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 lg:col-span-4">
             <h3 className="text-[20px] font-semibold text-white">Our Services</h3>
-            <ul className="flex flex-col gap-4">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 text-[14px]">
               {OUR_SERVICES.map((link) => (
                 <li key={link.label}>
                   <Link 
@@ -85,7 +96,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 lg:col-span-3">
             <h3 className="text-[20px] font-semibold text-white">Working Hours</h3>
             <ul className="flex flex-col gap-4 text-white/80">
               <li className="flex justify-between border-b border-dark-divider pb-3">

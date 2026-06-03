@@ -82,7 +82,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${onest.variable} scroll-smooth antialiased`}>
+    <html lang="en" className={`${onest.variable} scroll-smooth antialiased overflow-x-hidden`}>
       <head>
         <meta name="theme-color" content="#242736" />
         <link rel="manifest" href="/manifest.webmanifest" />
@@ -91,7 +91,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="flex min-h-screen flex-col overflow-x-clip bg-background">
+      <body className="flex min-h-screen flex-col overflow-x-hidden bg-background">
         <Header />
         {children}
         <Footer />

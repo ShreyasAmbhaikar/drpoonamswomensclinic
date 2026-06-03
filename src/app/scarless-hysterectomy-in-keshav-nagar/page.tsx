@@ -3,7 +3,11 @@ import PageHeader from '@/components/landing/PageHeader';
 import ServiceSidebar from '@/components/landing/ServiceSidebar';
 import Accordion from '@/components/ui/Accordion';
 import { AnimatedHeading } from '@/components/ui/AnimatedHeading';
-import { Heart, CheckCircle } from 'lucide-react';
+import VerticalTimeline from '@/components/ui/VerticalTimeline';
+import ComparisonCards from '@/components/ui/ComparisonCards';
+import HorizontalScrollCards from '@/components/ui/HorizontalScrollCards';
+import CircularProcess from '@/components/ui/CircularProcess';
+import { Heart, CheckCircle, Activity, ShieldCheck, Stethoscope, Crosshair } from 'lucide-react';
 
 export const metadata = {
   title: "Scarless Hysterectomy (NDVH) in Keshav Nagar Pune | Dr Poonam's Clinic",
@@ -20,42 +24,71 @@ export default function ScarlessHysterectomyPage() {
     { label: 'Scarless Hysterectomy' },
   ];
 
-  const procedureTimeline = [
+  const comparisonData: [any, any] = [
     {
-      step: '01',
-      title: 'Diagnostic Pre-Operative Check',
-      desc: 'Conducting pelvic ultrasound scans and biopsy tests to map uterine size and confirm suitability for vaginal extraction.'
+      title: "Scarless (Vaginal) Hysterectomy",
+      theme: "secondary",
+      items: [
+        { feature: "Abdominal Scars", isAvailable: "Zero external abdominal scars." },
+        { feature: "Surgical Pain", isAvailable: "Significantly lower post-operative pain." },
+        { feature: "Hospital Stay", isAvailable: "Short stay, usually 24 to 48 hours." },
+        { feature: "Infection Risk", isAvailable: "Very low risk of wound site infections." },
+        { feature: "Recovery to Normal", isAvailable: "Usually 2 to 3 weeks for light activities." }
+      ]
     },
     {
-      step: '02',
-      title: 'Vaginal Pathway Access',
-      desc: 'Accessing the pelvic cavity through a small internal incision at the top of the vagina under general or spinal anesthesia.'
-    },
-    {
-      step: '03',
-      title: 'Supporting Ligament Dissection',
-      desc: 'Carefully clamping and separating the blood vessels and ligaments supporting the uterus, with zero abdominal cuts.'
-    },
-    {
-      step: '04',
-      title: 'Uterine Extraction & Vault Closure',
-      desc: 'Gently extracting the uterus through the natural birth canal and suturing the vaginal vault with dissolvable internal threads.'
+      title: "Open Abdominal Hysterectomy",
+      theme: "primary",
+      items: [
+        { feature: "Abdominal Scars", isAvailable: "Requires a large 5-7 inch abdominal incision." },
+        { feature: "Surgical Pain", isAvailable: "High pain level requiring stronger analgesics." },
+        { feature: "Hospital Stay", isAvailable: "Longer stay, usually 3 to 5 days." },
+        { feature: "Infection Risk", isAvailable: "Higher risk due to the large external wound." },
+        { feature: "Recovery to Normal", isAvailable: "Usually takes 6 to 8 weeks." }
+      ]
     }
   ];
 
-  const recoveryTips = [
+  const indicationsCards = [
+    { title: "Abnormal Uterine Bleeding", description: "Severe, uncontrollable menstrual bleeding that does not respond to hormonal therapy or other medications.", icon: <Activity className="w-5 h-5" /> },
+    { title: "Uterine Fibroids", description: "Benign tumors growing in the uterus that cause pelvic pain, heavy bleeding, or pressure on the bladder/bowels.", icon: <Stethoscope className="w-5 h-5" /> },
+    { title: "Adenomyosis", description: "A condition where the inner lining of the uterus breaks through the muscle wall of the uterus, causing intense pain.", icon: <Heart className="w-5 h-5" /> },
+    { title: "Endometriosis", description: "In severe cases where endometrial tissue has spread extensively and the patient has completed her family.", icon: <Activity className="w-5 h-5" /> },
+    { title: "Uterine Prolapse", description: "When pelvic floor muscles weaken and the uterus descends into the vaginal canal.", icon: <ShieldCheck className="w-5 h-5" /> }
+  ];
+
+  const procedureTimeline = [
     {
-      title: 'Rest & Limit Strains',
-      desc: 'Avoiding heavy weight lifting, pushing, pulling, or strenuous abdominal tasks for at least 4 to 6 weeks.'
+      title: 'Diagnostic Pre-Operative Check',
+      description: 'Before surgery, Dr. Poonam conducts pelvic ultrasound scans to map the exact size of your uterus and confirm that it can safely pass through the vaginal canal.',
+      icon: <Stethoscope className="w-5 h-5" />
     },
     {
-      title: 'Pelvic Rest Protocols',
-      desc: 'Strictly avoiding vaginal douching, tampons, or sexual intercourse for 6 weeks to allow internal tissues to fully heal.'
+      title: 'Anesthesia & Positioning',
+      description: 'The procedure is performed under general or spinal anesthesia, ensuring you are completely pain-free. The surgery is accessed entirely from below.',
+      icon: <Activity className="w-5 h-5" />
     },
     {
-      title: 'High-Fiber Nutrition',
-      desc: 'Consuming high-fiber foods and drinking 3 liters of water daily to prevent straining during bowel movements.'
+      title: 'Vaginal Pathway Access',
+      description: 'A small circular incision is made internally around the cervix at the top of the vaginal canal. No cuts are made on the abdomen.',
+      icon: <Crosshair className="w-5 h-5" /> // Using a generic icon approach since Crosshair isn't imported, let's use Activity
+    },
+    {
+      title: 'Supporting Ligament Dissection',
+      description: 'The blood vessels, fallopian tubes, and ligaments supporting the uterus are carefully clamped, cut, and tied off using specialized surgical instruments.',
+      icon: <Activity className="w-5 h-5" />
+    },
+    {
+      title: 'Uterine Extraction & Vault Closure',
+      description: 'The uterus (and cervix) is gently extracted through the vagina. The top of the vagina (the vault) is then sutured closed with dissolvable internal threads.',
+      icon: <ShieldCheck className="w-5 h-5" />
     }
+  ];
+
+  const recoverySteps = [
+    { title: "First 48 Hours", description: "Hospital monitoring. You will be given IV pain relief and a catheter, which is usually removed the next day. Light walking begins." },
+    { title: "Weeks 1 to 2", description: "Resting at home. Mild spotting or vaginal discharge is normal. Avoid lifting anything heavier than a small bag of groceries." },
+    { title: "Weeks 4 to 6", description: "Internal sutures are dissolving. Strict avoidance of sexual intercourse, tampons, or swimming until Dr. Poonam gives the clear." }
   ];
 
   const faqs = [
@@ -100,7 +133,7 @@ export default function ScarlessHysterectomyPage() {
               </div>
 
               {/* Main Content */}
-              <div className="w-full lg:w-[66.666%] order-1 lg:order-2 flex flex-col gap-[40px] lg:gap-[60px]">
+              <div className="w-full lg:w-[66.666%] order-1 lg:order-2 flex flex-col gap-[60px]">
                 
                 {/* Overview */}
                 <div>
@@ -113,87 +146,63 @@ export default function ScarlessHysterectomyPage() {
                       priority
                     />
                   </div>
+                  <AnimatedHeading 
+                    text="What is Scarless Hysterectomy (NDVH)?" 
+                    className="text-[28px] md:text-[34px] font-bold text-primary mb-[20px] leading-tight mt-6"
+                  />
                   <div className="text-text space-y-4 leading-relaxed">
                     <p>
-                      Scarless Hysterectomy, clinically referred to as Non-Descent Vaginal Hysterectomy (NDVH), is a highly advanced, minimally invasive surgical technique for removing the uterus. By accessing the pelvic cavity through the natural vaginal canal, it eliminates the need for any abdominal cuts, resulting in cosmetic preservation and a much smoother recovery.
+                      Scarless Hysterectomy, clinically referred to as Non-Descent Vaginal Hysterectomy (NDVH), is a highly advanced, minimally invasive surgical technique for removing the uterus. By accessing the pelvic cavity entirely through the natural vaginal canal, it eliminates the need for any abdominal cuts, resulting in cosmetic preservation, dramatically less pain, and a much smoother recovery.
                     </p>
                     <p>
-                      At Dr Poonam's Women's Clinic in Keshav Nagar, Pune, we specialize in NDVH for benign uterine conditions. Dr. Poonam brings extensive surgical expertise and post-surgical clinical oversight to ensure our patients experience minimal discomfort and can return to their routines quickly. If you are residing in Hadapsar or Magarpatta and are searching for a scarless hysterectomy doctor around the area, our clinic provides expert surgical consultations and follow-up care close to home.
+                      At Dr Poonam's Women's Clinic in Keshav Nagar, Pune, we specialize in NDVH for benign uterine conditions. Dr. Poonam brings extensive surgical expertise and strict post-surgical clinical oversight to ensure our patients experience minimal discomfort and can return to their routines quickly. If you are residing in Hadapsar or Magarpatta and are searching for a scarless hysterectomy doctor around the area, our clinic provides expert surgical consultations and follow-up care close to home.
                     </p>
                   </div>
                 </div>
 
-                {/* Procedure Steps */}
+                {/* Comparison Section */}
                 <div>
                   <AnimatedHeading 
-                    text="NDVH Surgical Journey" 
-                    className="text-[28px] md:text-[34px] font-bold text-primary mb-[30px] leading-tight" 
+                    text="Vaginal vs. Abdominal Hysterectomy" 
+                    className="text-[28px] md:text-[34px] font-bold text-primary mb-[20px] leading-tight" 
                   />
-                  <div className="flex flex-col md:flex-row gap-[40px] lg:gap-[60px] items-start">
-                    {/* Left Column: Intro text */}
-                    <div className="w-full md:w-[40%] flex flex-col gap-4">
-                      <p className="text-text leading-relaxed text-[15px]">
-                        A scarless hysterectomy (NDVH) is carried out through the natural vaginal canal, leaving no external cuts on the abdomen. Understanding the surgical journey helps patients proceed with reassurance and ease. If you live around the area of Mundhwa or Kharadi, our center provides:
-                      </p>
-                      <div className="bg-[#FAF6F3] p-6 rounded-[20px] border border-divider/10 mt-2">
-                        <h4 className="font-bold text-primary mb-2 text-[16px]">NDVH Path</h4>
-                        <p className="text-text text-[14px] leading-relaxed">
-                          This minimally invasive procedure takes approximately 1 hour, allowing patients to stand and walk comfortably within 24 hours of surgery.
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Right Column: Vertical Timeline */}
-                    <div className="w-full md:w-[60%] relative flex flex-col pl-2">
-                      {/* Connecting vertical line */}
-                      <div className="absolute left-[21px] top-5 bottom-12 w-[2px] bg-[#5A4A66]/20"></div>
-
-                      {procedureTimeline.map((step, idx) => (
-                        <div key={idx} className="flex gap-6 relative">
-                          {/* Step Icon */}
-                          <div className="relative z-10 flex items-center justify-center w-[26px] h-[26px] rounded-full bg-[#FAF6F3] border border-[#5A4A66] shrink-0 mt-1">
-                            <span className="w-2.5 h-2.5 rounded-full bg-accent"></span>
-                          </div>
-
-                          {/* Content */}
-                          <div className={`flex-1 ${idx < procedureTimeline.length - 1 ? 'pb-10' : 'pb-0'}`}>
-                            <div className="inline-block bg-[#5A4A66]/10 text-accent font-bold text-[12px] px-3 py-1 rounded-[100px] mb-2 uppercase tracking-wide">
-                              Stage {step.step}
-                            </div>
-                            <h3 className="text-[18px] font-bold text-primary mb-2 leading-snug">
-                              {step.title}
-                            </h3>
-                            <p className="text-text text-[14px] leading-relaxed">
-                              {step.desc}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  <p className="text-text mb-[30px] text-[15px] leading-relaxed">
+                    According to global gynecological standards, vaginal hysterectomy is the route of choice whenever technically feasible, due to its overwhelming benefits for the patient.
+                  </p>
+                  <ComparisonCards columns={comparisonData} />
                 </div>
 
-                {/* Recovery Care */}
-                <div>
-                  <AnimatedHeading 
-                    text="Guidelines For Post-Op Healing" 
-                    className="text-[28px] md:text-[34px] font-bold text-primary mb-[30px] leading-tight" 
+                {/* Horizontal Scroll Cards for Indications */}
+                <div className="w-[calc(100vw-32px)] lg:w-full -ml-4 lg:ml-0 px-4 lg:px-0">
+                  <HorizontalScrollCards 
+                    title="Why Might You Need a Hysterectomy?" 
+                    subtitle="A hysterectomy is a definitive cure for several benign but severely painful or disruptive pelvic conditions."
+                    cards={indicationsCards} 
                   />
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {recoveryTips.map((tip, idx) => (
-                      <div key={idx} className="bg-white p-6 rounded-[20px] border border-divider/10 shadow-sm flex flex-col">
-                        <div className="w-10 h-10 bg-accent/15 rounded-full flex items-center justify-center text-accent mb-4 shrink-0">
-                          <Heart className="w-5 h-5" />
-                        </div>
-                        <h3 className="text-[18px] font-bold text-primary mb-2">{tip.title}</h3>
-                        <p className="text-text text-[14px] leading-relaxed">{tip.desc}</p>
-                      </div>
-                    ))}
-                  </div>
+                </div>
+
+                {/* Procedure Steps (Vertical Timeline) */}
+                <div className="bg-white p-6 md:p-10 rounded-[24px] shadow-sm border border-divider/10">
+                  <AnimatedHeading 
+                    text="The Surgical Journey (NDVH)" 
+                    className="text-[28px] md:text-[34px] font-bold text-primary mb-[20px] leading-tight" 
+                  />
+                  <p className="text-text mb-[40px] text-[15px] leading-relaxed">
+                    A scarless hysterectomy is performed entirely internally. The procedure generally takes 1 to 2 hours, and leaves no visible trace on your abdomen.
+                  </p>
+                  <VerticalTimeline items={procedureTimeline} />
+                </div>
+
+                {/* Recovery Process (Circular Process) */}
+                <div>
+                  <CircularProcess 
+                    title="Post-Operative Healing" 
+                    steps={recoverySteps} 
+                  />
                 </div>
 
                 {/* Why Choose Us */}
-                <div className="bg-[#242736] text-white rounded-[24px] p-8 md:p-10 flex flex-col md:flex-row items-center gap-[45px]">
+                <div className="bg-[#151722] text-white rounded-[24px] p-8 md:p-10 flex flex-col md:flex-row items-center gap-[45px]">
                   <div className="w-full md:w-2/3 flex flex-col gap-6">
                     <h3 className="text-[26px] font-bold text-white leading-tight">
                       Why Choose Dr. Poonam's Clinic for NDVH?
@@ -215,9 +224,9 @@ export default function ScarlessHysterectomyPage() {
                   </div>
                   <div className="w-full md:w-1/3 flex justify-center shrink-0">
                     <div className="bg-white/10 border border-white/15 p-6 rounded-[20px] text-center w-full max-w-[220px]">
-                      <div className="text-[44px] font-bold text-accent mb-1">5.0</div>
+                      <div className="text-[44px] font-bold text-white mb-1">5.0</div>
                       <p className="text-[13px] font-bold uppercase tracking-wider text-white/90 mb-1">Google Rating</p>
-                      <p className="text-[12px] text-white/70">Based on 42 Verified Reviews</p>
+                      <p className="text-[14px] md:text-[15px] text-white/80">Based on 42 Verified Reviews</p>
                     </div>
                   </div>
                 </div>

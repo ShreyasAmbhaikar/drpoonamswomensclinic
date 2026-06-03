@@ -3,7 +3,11 @@ import PageHeader from '@/components/landing/PageHeader';
 import ServiceSidebar from '@/components/landing/ServiceSidebar';
 import Accordion from '@/components/ui/Accordion';
 import { AnimatedHeading } from '@/components/ui/AnimatedHeading';
-import { Heart, ShieldCheck, CheckCircle } from 'lucide-react';
+import VerticalTimeline from '@/components/ui/VerticalTimeline';
+import ComparisonCards from '@/components/ui/ComparisonCards';
+import HorizontalScrollCards from '@/components/ui/HorizontalScrollCards';
+import CircularProcess from '@/components/ui/CircularProcess';
+import { ShieldCheck, CheckCircle, AlertTriangle, Scale, Activity } from 'lucide-react';
 
 export const metadata = {
   title: "MTP, D & E Services (Confidential Abortion) in Keshav Nagar Pune",
@@ -20,42 +24,65 @@ export default function MtpDePage() {
     { label: 'MTP, D & E Services' },
   ];
 
-  const processTimeline = [
+  const comparisonData: [any, any] = [
     {
-      step: '01',
-      title: 'Confidential Pre-Evaluation',
-      desc: 'Confirming pregnancy duration using pelvic ultrasound scan, reviewing medical history, and verifying compliance with the MTP Act of India.'
+      title: "Medical Abortion (MTP Pills)",
+      theme: "secondary",
+      items: [
+        { feature: "Timeframe", isAvailable: "Applicable only up to 7 weeks of pregnancy." },
+        { feature: "Procedure Type", isAvailable: "Non-surgical. Involves taking prescribed oral medication." },
+        { feature: "Process", isAvailable: "Mimics a heavy menstrual period/miscarriage at home." },
+        { feature: "Anesthesia", isAvailable: "No anesthesia required. Painkillers are prescribed." },
+        { feature: "Success Rate", isAvailable: "Highly effective, but requires an ultrasound to confirm." }
+      ]
     },
     {
-      step: '02',
-      title: 'Method Selection',
-      desc: 'Choosing between medical termination pills (up to 7 weeks gestation) or a minor surgical procedure (D&E or suction evacuation).'
-    },
-    {
-      step: '03',
-      title: 'Safe Procedure Execution',
-      desc: 'Performing the procedure under strict sterile settings with options for local block or light sedation to ensure absolute pain control.'
-    },
-    {
-      step: '04',
-      title: 'Post-Procedure Recovery',
-      desc: 'Observing the patient, offering post-care hygiene counseling, providing contraceptive guidance, and scheduling a 2-week checkup.'
+      title: "Surgical Abortion (D&E / Suction)",
+      theme: "primary",
+      items: [
+        { feature: "Timeframe", isAvailable: "Applicable up to 12 weeks (first trimester)." },
+        { feature: "Procedure Type", isAvailable: "Minor, safe surgical procedure." },
+        { feature: "Process", isAvailable: "Quick clinical evacuation taking 10-15 minutes." },
+        { feature: "Anesthesia", isAvailable: "Performed under local block or light sedation." },
+        { feature: "Success Rate", isAvailable: "100% effective. Uterus is completely cleared." }
+      ]
     }
   ];
 
-  const safetyGuidelines = [
+  const safetyLegalCards = [
+    { title: "Strictly Confidential", description: "Your privacy is our utmost priority. Medical records are kept strictly confidential and only discussed privately with you.", icon: <ShieldCheck className="w-5 h-5" /> },
+    { title: "Legally Compliant", description: "We operate fully within the framework of the Medical Termination of Pregnancy (MTP) Act of India.", icon: <Scale className="w-5 h-5" /> },
+    { title: "No OTC Pills", description: "Never take abortion pills bought over the counter. They can lead to severe, life-threatening internal bleeding without medical supervision.", icon: <AlertTriangle className="w-5 h-5" /> },
+    { title: "Ectopic Pregnancy Check", description: "A pre-procedure ultrasound is mandatory to ensure the pregnancy isn't in the fallopian tubes, which would require emergency surgery.", icon: <Activity className="w-5 h-5" /> }
+  ];
+
+  const protocolTimeline = [
     {
-      title: 'Prescription Safety',
-      desc: 'Never take abortion pills (MTP kits) over-the-counter without a gynecologist\'s prescription, as they can cause life-threatening hemorrhages or incomplete abortions.'
+      title: 'Private Consultation & Ultrasound',
+      description: 'You will have a private, non-judgmental consultation with Dr. Poonam. A quick ultrasound is performed to confirm the exact gestational age and rule out an ectopic pregnancy.',
+      icon: <Activity className="w-5 h-5" />
     },
     {
-      title: 'Rule Out Ectopic Pregnancy',
-      desc: 'A pre-procedure ultrasound scan is mandatory to ensure the pregnancy is in the uterus and not in the fallopian tubes (ectopic pregnancy).'
+      title: 'Method Selection & Consent',
+      description: 'Based on the ultrasound results and your medical history, Dr. Poonam will safely guide you to choose either the medical (pill) route or the surgical (D&E) route. Legal consent forms are signed.',
+      icon: <ShieldCheck className="w-5 h-5" />
     },
     {
-      title: 'Post-Care Alert signs',
-      desc: 'Monitoring for fever, severe lower abdominal cramping, foul-smelling discharge, or heavy bleeding (soaking more than two sanitary pads per hour).'
+      title: 'Safe Procedure Execution',
+      description: 'If taking pills, you will be given a precise dosage plan. If undergoing D&E, it will be performed in a sterile setting under light sedation to ensure absolute pain control.',
+      icon: <ShieldCheck className="w-5 h-5" />
+    },
+    {
+      title: 'Follow-up Evaluation',
+      description: 'A mandatory follow-up visit and ultrasound are scheduled two weeks later to ensure the uterus is completely empty and recovering well.',
+      icon: <CheckCircle className="w-5 h-5" />
     }
+  ];
+
+  const recoverySteps = [
+    { title: "Immediate Rest", description: "Rest for 24-48 hours. Expect cramping and bleeding heavier than a normal period." },
+    { title: "Infection Prevention", description: "Do not use tampons, menstrual cups, or engage in sexual intercourse for at least 2 weeks." },
+    { title: "Warning Signs", description: "Contact us immediately if you soak more than 2 pads an hour, have a high fever, or severe abdominal pain." }
   ];
 
   const faqs = [
@@ -100,7 +127,7 @@ export default function MtpDePage() {
               </div>
 
               {/* Main Content */}
-              <div className="w-full lg:w-[66.666%] order-1 lg:order-2 flex flex-col gap-[40px] lg:gap-[60px]">
+              <div className="w-full lg:w-[66.666%] order-1 lg:order-2 flex flex-col gap-[60px]">
                 
                 {/* Overview */}
                 <div>
@@ -113,111 +140,87 @@ export default function MtpDePage() {
                       priority
                     />
                   </div>
+                  <AnimatedHeading 
+                    text="What is MTP, D & E Services?" 
+                    className="text-[28px] md:text-[34px] font-bold text-primary mb-[20px] leading-tight mt-6"
+                  />
                   <div className="text-text space-y-4 leading-relaxed">
                     <p>
-                      Medical Termination of Pregnancy (MTP) and Dilation & Evacuation (D&E) are safe, clinically approved medical procedures used to terminate an unplanned pregnancy or clear retained tissues after an incomplete miscarriage. Undergoing these procedures under registered medical supervision ensures the preservation of maternal health and future fertility.
+                      Medical Termination of Pregnancy (MTP) and Dilation & Evacuation (D&E) are safe, clinically approved medical procedures used to terminate an unplanned pregnancy or clear retained tissues after an incomplete miscarriage. Undergoing these procedures under registered medical supervision is critical to protecting maternal health and preserving future fertility.
                     </p>
                     <p>
-                      At Dr Poonam's Women's Clinic in Keshav Nagar, Pune, we offer strictly confidential, compassionate, and legally compliant abortion services in accordance with the MTP Act of India. Dr. Poonam provides thorough pre-procedure counseling, sterile procedures, and attentive post-operative support. If you reside in nearby Mundhwa or Kharadi and are seeking a private, legal gynaecology clinic around the area, our center provides safe and trusted medical termination care.
+                      At Dr Poonam's Women's Clinic in Keshav Nagar, Pune, we offer strictly confidential, highly compassionate, and legally compliant abortion services in accordance with the MTP Act of India. Dr. Poonam provides thorough, non-judgmental pre-procedure counseling, sterile procedures, and attentive post-operative support. If you reside in nearby Mundhwa or Kharadi and are seeking a private, legal gynaecology clinic, our center provides safe and trusted medical care.
                     </p>
                   </div>
                 </div>
 
-                {/* Procedure Steps */}
+                {/* Comparison Section */}
                 <div>
                   <AnimatedHeading 
-                    text="Our Safe & Legal MTP / D&E Protocol" 
-                    className="text-[28px] md:text-[34px] font-bold text-primary mb-[30px] leading-tight" 
+                    text="Medical vs. Surgical Termination" 
+                    className="text-[28px] md:text-[34px] font-bold text-primary mb-[20px] leading-tight" 
                   />
-                  <div className="flex flex-col md:flex-row gap-[40px] lg:gap-[60px] items-start">
-                    {/* Left Column: Intro text */}
-                    <div className="w-full md:w-[40%] flex flex-col gap-4">
-                      <p className="text-text leading-relaxed text-[15px]">
-                        Medical Termination of Pregnancy (MTP) and D&E services are carried out with absolute clinical safety and legal confidentiality. If you live around the area of Mundhwa or Kharadi, our certified protocols involve:
-                      </p>
-                      <div className="bg-[#FAF6F3] p-6 rounded-[20px] border border-divider/10 mt-2">
-                        <h4 className="font-bold text-primary mb-2 text-[16px]">Safety Standard</h4>
-                        <p className="text-text text-[14px] leading-relaxed">
-                          All diagnostic ultrasound checks, pill administrations, or minor surgical evacuations are conducted by registered medical experts in sterile environments.
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Right Column: Vertical Timeline */}
-                    <div className="w-full md:w-[60%] relative flex flex-col pl-2">
-                      {/* Connecting vertical line */}
-                      <div className="absolute left-[21px] top-5 bottom-12 w-[2px] bg-[#5A4A66]/20"></div>
-
-                      {processTimeline.map((step, idx) => (
-                        <div key={idx} className="flex gap-6 relative">
-                          {/* Step Icon */}
-                          <div className="relative z-10 flex items-center justify-center w-[26px] h-[26px] rounded-full bg-[#FAF6F3] border border-[#5A4A66] shrink-0 mt-1">
-                            <span className="w-2.5 h-2.5 rounded-full bg-accent"></span>
-                          </div>
-
-                          {/* Content */}
-                          <div className={`flex-1 ${idx < processTimeline.length - 1 ? 'pb-10' : 'pb-0'}`}>
-                            <div className="inline-block bg-[#5A4A66]/10 text-accent font-bold text-[12px] px-3 py-1 rounded-[100px] mb-2 uppercase tracking-wide">
-                              Stage {step.step}
-                            </div>
-                            <h3 className="text-[18px] font-bold text-primary mb-2 leading-snug">
-                              {step.title}
-                            </h3>
-                            <p className="text-text text-[14px] leading-relaxed">
-                              {step.desc}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  <p className="text-text mb-[30px] text-[15px] leading-relaxed">
+                    Depending on your gestational age (how far along the pregnancy is), Dr. Poonam will recommend one of the two safest, legally approved methods.
+                  </p>
+                  <ComparisonCards columns={comparisonData} />
                 </div>
 
-                {/* Safety Tips */}
-                <div>
-                  <AnimatedHeading 
-                    text="Patient Safety & Self-Care Warnings" 
-                    className="text-[28px] md:text-[34px] font-bold text-primary mb-[30px] leading-tight" 
+                {/* Horizontal Scroll Cards for Safety/Legal */}
+                <div className="w-[calc(100vw-32px)] lg:w-full -ml-4 lg:ml-0 px-4 lg:px-0">
+                  <HorizontalScrollCards 
+                    title="Our Commitment to Safety & Privacy" 
+                    subtitle="Your health and confidentiality are our highest priorities."
+                    cards={safetyLegalCards} 
                   />
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {safetyGuidelines.map((tip, idx) => (
-                      <div key={idx} className="bg-white p-6 rounded-[20px] border border-divider/10 shadow-sm flex flex-col">
-                        <div className="w-10 h-10 bg-accent/15 rounded-full flex items-center justify-center text-accent mb-4 shrink-0">
-                          <ShieldCheck className="w-5 h-5" />
-                        </div>
-                        <h3 className="text-[18px] font-bold text-primary mb-2">{tip.title}</h3>
-                        <p className="text-text text-[14px] leading-relaxed">{tip.desc}</p>
-                      </div>
-                    ))}
-                  </div>
+                </div>
+
+                {/* Procedure Steps (Vertical Timeline) */}
+                <div className="bg-white p-6 md:p-10 rounded-[24px] shadow-sm border border-divider/10">
+                  <AnimatedHeading 
+                    text="The Confidential Protocol" 
+                    className="text-[28px] md:text-[34px] font-bold text-primary mb-[20px] leading-tight" 
+                  />
+                  <p className="text-text mb-[40px] text-[15px] leading-relaxed">
+                    We ensure you are fully informed and comfortable at every step of this sensitive process.
+                  </p>
+                  <VerticalTimeline items={protocolTimeline} />
+                </div>
+
+                {/* Recovery Process (Circular Process) */}
+                <div>
+                  <CircularProcess 
+                    title="Post-Procedure Care Guidelines" 
+                    steps={recoverySteps} 
+                  />
                 </div>
 
                 {/* Why Choose Us */}
-                <div className="bg-[#242736] text-white rounded-[24px] p-8 md:p-10 flex flex-col md:flex-row items-center gap-[45px]">
+                <div className="bg-[#151722] text-white rounded-[24px] p-8 md:p-10 flex flex-col md:flex-row items-center gap-[45px]">
                   <div className="w-full md:w-2/3 flex flex-col gap-6">
                     <h3 className="text-[26px] font-bold text-white leading-tight">
-                      Why Choose Dr. Poonam's Clinic for MTP?
+                      Why Choose Dr. Poonam's Clinic?
                     </h3>
                     <ul className="space-y-3">
                       <li className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-accent mt-1 shrink-0" />
-                        <span><strong>100% Confidentiality:</strong> Complete protection of patient privacy and medical records in a safe clinical space.</span>
+                        <span><strong>100% Confidentiality:</strong> Complete protection of patient privacy and medical records in a safe, non-judgmental space.</span>
                       </li>
                       <li className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-accent mt-1 shrink-0" />
-                        <span><strong>Approved Facility Standards:</strong> Medical protocols and approvals matching the guidelines of the Ministry of Health, India.</span>
+                        <span><strong>Approved Facility Standards:</strong> Medical protocols and approvals matching the strict guidelines of the Ministry of Health, India.</span>
                       </li>
                       <li className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-accent mt-1 shrink-0" />
-                        <span><strong>attentive Post-Care:</strong> Immediate availability for post-operative concerns, pain control, and contraceptive counseling.</span>
+                        <span><strong>Attentive Post-Care:</strong> Immediate availability for post-operative concerns, pain control, and contraceptive counseling.</span>
                       </li>
                     </ul>
                   </div>
                   <div className="w-full md:w-1/3 flex justify-center shrink-0">
                     <div className="bg-white/10 border border-white/15 p-6 rounded-[20px] text-center w-full max-w-[220px]">
-                      <div className="text-[44px] font-bold text-accent mb-1">5.0</div>
+                      <div className="text-[44px] font-bold text-white mb-1">5.0</div>
                       <p className="text-[13px] font-bold uppercase tracking-wider text-white/90 mb-1">Google Rating</p>
-                      <p className="text-[12px] text-white/70">Based on 42 Verified Reviews</p>
+                      <p className="text-[14px] md:text-[15px] text-white/80">Based on 42 Verified Reviews</p>
                     </div>
                   </div>
                 </div>

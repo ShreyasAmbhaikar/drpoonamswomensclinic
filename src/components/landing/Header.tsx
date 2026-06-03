@@ -27,6 +27,17 @@ const SERVICES_ITEMS = [
   { label: "MTP, D & E Services", href: "/mtp-d-e-services-in-keshav-nagar/" },
   { label: "Tubal Ligation & Reversal", href: "/tubal-ligation-reversal-in-keshav-nagar/" },
   { label: "Laparoscopic Procedures", href: "/laparoscopic-procedures-in-keshav-nagar/" },
+  { label: "Hysteroscopy", href: "/hysteroscopy-in-keshav-nagar/" },
+  { label: "Pregnancy Care", href: "/pregnancy-care-in-keshav-nagar/" },
+  { label: "High Risk Pregnancy Management", href: "/high-risk-pregnancy-management-in-keshav-nagar/" },
+  { label: "Pubertal Counselling", href: "/pubertal-counselling-in-keshav-nagar/" },
+  { label: "Menstrual Hygiene", href: "/menstrual-hygiene-in-keshav-nagar/" },
+  { label: "Contraception Advice", href: "/contraception-advice-in-keshav-nagar/" },
+  { label: "Lactational Counselling", href: "/lactational-counselling-in-keshav-nagar/" },
+  { label: "Family Planning Center", href: "/family-planning-center-in-keshav-nagar/" },
+  { label: "Pelvic Infections", href: "/pelvic-infections-treatment-in-keshav-nagar/" },
+  { label: "Cancer Screening", href: "/cancer-screening-in-keshav-nagar/" },
+  { label: "Addressing Menstrual Cycle Problems", href: "/menstrual-cycle-problems-in-keshav-nagar/" },
 ];
 
 export const Header = () => {
@@ -75,7 +86,7 @@ export const Header = () => {
       <div className="container mx-auto max-w-[1300px] px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/best-gynecologist-in-keshav-nagar/" prefetch={false} className="relative z-50 flex items-center gap-3 shrink-0">
+          <Link href="/best-gynecologist-in-keshav-nagar/" prefetch={false} className="relative z-50 flex items-center shrink-0">
             <Image
               src="/images/logo-emblem-2.webp"
               alt="Dr Poonam's Women's Clinic"
@@ -110,7 +121,7 @@ export const Header = () => {
                     </Link>
                     
                     {/* Dropdown Menu */}
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[280px] bg-white border border-divider/10 shadow-xl rounded-[16px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-3 flex flex-col gap-1">
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[290px] max-h-[380px] overflow-y-auto bg-white border border-divider/10 shadow-xl rounded-[16px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-3 flex flex-col gap-1 scrollbar-thin">
                       {SERVICES_ITEMS.map((item) => (
                         <Link
                           key={item.label}
@@ -198,7 +209,7 @@ export const Header = () => {
       {/* Mobile Menu Slide-out */}
       <div
         className={cn(
-          "fixed top-0 left-0 bottom-0 w-[300px] bg-white z-50 lg:hidden flex flex-col p-6 transition-transform duration-300 ease-in-out",
+          "fixed top-0 left-0 bottom-0 w-[300px] bg-white z-50 lg:hidden flex flex-col p-6 overflow-y-auto transition-transform duration-300 ease-in-out",
           isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >

@@ -4,10 +4,12 @@ import { siteConfig } from '@/lib/site-config';
 interface ServiceSidebarProps {
   currentPath?: string;
   hideContact?: boolean;
+  hideServices?: boolean;
+  limitServices?: number;
 }
 
-export default function ServiceSidebar({ currentPath, hideContact }: ServiceSidebarProps) {
-  const services = [
+export default function ServiceSidebar({ currentPath, hideContact, hideServices, limitServices }: ServiceSidebarProps) {
+  const allServices = [
     { title: 'Normal Delivery', href: '/normal-delivery-in-keshav-nagar/' },
     { title: 'LSCS (Caesarean Section)', href: '/lscs-caesarean-section-in-keshav-nagar/' },
     { title: 'Infertility, IUI & IVF', href: '/infertility-iui-ivf-in-keshav-nagar/' },
@@ -18,14 +20,28 @@ export default function ServiceSidebar({ currentPath, hideContact }: ServiceSide
     { title: 'MTP, D & E Services', href: '/mtp-d-e-services-in-keshav-nagar/' },
     { title: 'Tubal Ligation & Reversal', href: '/tubal-ligation-reversal-in-keshav-nagar/' },
     { title: 'Laparoscopic Procedures', href: '/laparoscopic-procedures-in-keshav-nagar/' },
+    { title: 'Hysteroscopy', href: '/hysteroscopy-in-keshav-nagar/' },
+    { title: 'Pregnancy Care', href: '/pregnancy-care-in-keshav-nagar/' },
+    { title: 'High Risk Pregnancy Management', href: '/high-risk-pregnancy-management-in-keshav-nagar/' },
+    { title: 'Pubertal Counselling', href: '/pubertal-counselling-in-keshav-nagar/' },
+    { title: 'Menstrual Hygiene', href: '/menstrual-hygiene-in-keshav-nagar/' },
+    { title: 'Contraception Advice', href: '/contraception-advice-in-keshav-nagar/' },
+    { title: 'Lactational Counselling', href: '/lactational-counselling-in-keshav-nagar/' },
+    { title: 'Family Planning Center', href: '/family-planning-center-in-keshav-nagar/' },
+    { title: 'Pelvic Infections', href: '/pelvic-infections-treatment-in-keshav-nagar/' },
+    { title: 'Cancer Screening', href: '/cancer-screening-in-keshav-nagar/' },
+    { title: 'Addressing Menstrual Cycle Problems', href: '/menstrual-cycle-problems-in-keshav-nagar/' },
   ];
+
+  const services = limitServices ? allServices.slice(0, limitServices) : allServices;
 
   return (
     <div className="flex flex-col gap-[30px] lg:sticky lg:top-[140px] h-fit">
       {/* Service List Widget */}
+      {!hideServices && (
       <div className="overflow-hidden bg-[#FAF6F3] rounded-[24px] border border-divider/10 shadow-sm">
-        {/* Purple Banner Header */}
-        <div className="bg-[#5A4A66] px-8 py-5">
+        {/* Theme Color Banner Header */}
+        <div className="bg-accent px-8 py-5">
           <h3 className="text-[20px] font-bold text-white tracking-wide">
             More Services
           </h3>
@@ -73,12 +89,13 @@ export default function ServiceSidebar({ currentPath, hideContact }: ServiceSide
           </ul>
         </div>
       </div>
+      )}
 
       {/* Contact Widget */}
       {!hideContact && (
         <div className="overflow-hidden bg-[#242736] rounded-[24px] border border-white/5 shadow-sm text-white">
-          {/* Purple Banner Header */}
-          <div className="bg-[#5A4A66] px-8 py-5 text-center">
+          {/* Theme Color Banner Header */}
+          <div className="bg-accent px-8 py-5 text-center">
             <h3 className="text-[20px] font-bold text-white tracking-wide">
               Need Expert Medical Guidance?
             </h3>

@@ -3,7 +3,11 @@ import PageHeader from '@/components/landing/PageHeader';
 import ServiceSidebar from '@/components/landing/ServiceSidebar';
 import Accordion from '@/components/ui/Accordion';
 import { AnimatedHeading } from '@/components/ui/AnimatedHeading';
-import { Activity, CheckCircle } from 'lucide-react';
+import VerticalTimeline from '@/components/ui/VerticalTimeline';
+import ComparisonCards from '@/components/ui/ComparisonCards';
+import HorizontalScrollCards from '@/components/ui/HorizontalScrollCards';
+import CircularProcess from '@/components/ui/CircularProcess';
+import { Activity, CheckCircle, ShieldCheck, Heart, Crosshair } from 'lucide-react';
 
 export const metadata = {
   title: "Laparoscopic Gynecologist Specialist in Keshav Nagar Pune | Dr Poonam's Clinic",
@@ -20,42 +24,71 @@ export default function LaparoscopicProceduresPage() {
     { label: 'Laparoscopic Procedures' },
   ];
 
-  const processTimeline = [
+  const comparisonData: [any, any] = [
     {
-      step: '01',
-      title: 'Diagnostic & Anesthesia Planning',
-      desc: 'Performing detailed pelvic ultrasound or MRI scans, conducting pre-anesthetic checkups (PAC), and marking port locations.'
+      title: "Laparoscopic (Keyhole) Surgery",
+      theme: "secondary",
+      items: [
+        { feature: "Incision Size", isAvailable: "Tiny 0.5cm to 1cm incisions." },
+        { feature: "Hospital Stay", isAvailable: "Often discharged the same day or within 24 hours." },
+        { feature: "Pain Level", isAvailable: "Significantly less post-operative pain." },
+        { feature: "Scarring", isAvailable: "Minimal, barely noticeable scars that fade quickly." },
+        { feature: "Recovery Time", isAvailable: "Back to normal daily activities within 1-2 weeks." }
+      ]
     },
     {
-      step: '02',
-      title: 'Navel Entry & Gas Insufflation',
-      desc: 'Under general anesthesia, making a tiny 5-10mm incision inside the navel and inflating the abdomen with CO2 gas for a clear visual field.'
-    },
-    {
-      step: '03',
-      title: 'Surgical Keyhole Treatment',
-      desc: 'Inserting specialized laparoscopic instruments through secondary tiny ports to excise cysts, remove fibroids, or clear endometriosis.'
-    },
-    {
-      step: '04',
-      title: 'Suture & Ward Recovery',
-      desc: 'Releasing the carbon dioxide gas, closing keyholes with absorbable cosmetic sutures, and observing the patient for comfortable discharge.'
+      title: "Traditional Open Surgery",
+      theme: "primary",
+      items: [
+        { feature: "Incision Size", isAvailable: "Large 10cm to 15cm abdominal cut." },
+        { feature: "Hospital Stay", isAvailable: "Requires 3 to 5 days of inpatient care." },
+        { feature: "Pain Level", isAvailable: "Higher pain requiring stronger pain medications." },
+        { feature: "Scarring", isAvailable: "Leaves a large, permanent abdominal scar." },
+        { feature: "Recovery Time", isAvailable: "Takes 4 to 6 weeks for full tissue healing." }
+      ]
     }
   ];
 
-  const postOpCareTips = [
+  const treatableConditions = [
+    { title: "Ovarian Cysts (Cystectomy)", description: "Safe removal of painful or complex cysts while preserving the healthy ovarian tissue, crucial for future fertility.", icon: <Crosshair className="w-5 h-5" /> },
+    { title: "Uterine Fibroids (Myomectomy)", description: "Extracting non-cancerous uterine growths that cause heavy bleeding and pelvic pressure, through tiny abdominal ports.", icon: <Crosshair className="w-5 h-5" /> },
+    { title: "Endometriosis Excision", description: "Identifying and vaporizing ectopic endometrial tissue that causes debilitating menstrual pain and fertility issues.", icon: <Crosshair className="w-5 h-5" /> },
+    { title: "Ectopic Pregnancy", description: "A life-saving emergency procedure to remove a fertilized egg growing outside the uterus, usually in the fallopian tube.", icon: <ShieldCheck className="w-5 h-5" /> },
+    { title: "Diagnostic Fertility Check", description: "A thorough visual inspection of the pelvic organs combined with a dye test (chromotubation) to check if fallopian tubes are open.", icon: <Activity className="w-5 h-5" /> }
+  ];
+
+  const procedureSteps = [
     {
-      title: 'CO2 Gas Bloating Relief',
-      desc: 'Mild bloating or shoulder tip discomfort is normal due to residual carbon dioxide. Gentle walking around the room helps clear the gas.'
+      title: 'Pre-Surgical Preparation',
+      description: 'You are placed under general anesthesia so you will be completely asleep. The abdominal area is sterilized, and a tiny incision (usually inside the navel) is made.',
+      icon: <Activity className="w-5 h-5" />
     },
     {
-      title: 'Keyhole Dressing Hygiene',
-      desc: 'Keep the incision dressings dry and intact for 48 hours. Afterwards, clean the wounds gently with mild soap and pat them dry.'
+      title: 'Gas Insufflation',
+      description: 'Carbon dioxide gas is gently pumped into the abdomen. This lifts the abdominal wall away from the internal organs, creating a spacious, safe viewing area for the surgeon.',
+      icon: <Activity className="w-5 h-5" />
     },
     {
-      title: 'Gradual Return to Activity',
-      desc: 'Avoid lifting loads over 5kg, intense core workouts, or swimming for 2 to 3 weeks to support internal muscular healing.'
+      title: 'Camera Insertion & Navigation',
+      description: 'A laparoscope (a thin tube with a high-definition camera and light) is inserted. The live video feed is displayed on large monitors, providing a magnified, crystal-clear view of the pelvic organs.',
+      icon: <Activity className="w-5 h-5" />
+    },
+    {
+      title: 'Surgical Treatment',
+      description: 'If treatment is needed, 1-3 additional tiny incisions are made lower on the abdomen to insert specialized, pencil-thin surgical instruments to cut, extract, or repair tissue.',
+      icon: <Crosshair className="w-5 h-5" />
+    },
+    {
+      title: 'Deflation and Closure',
+      description: 'Once complete, the CO2 gas is carefully released, instruments are removed, and the tiny incisions are closed with dissolving sutures and covered with small bandages.',
+      icon: <ShieldCheck className="w-5 h-5" />
     }
+  ];
+
+  const recoveryTimeline = [
+    { title: "Days 1-2", description: "Resting at home. You may feel mild shoulder pain from the CO2 gas; gentle walking helps it dissipate quickly." },
+    { title: "Days 3-7", description: "Most patients can return to light desk work or normal household activities. Keep incision bandages dry." },
+    { title: "Weeks 2-3", description: "Full internal healing. You can usually resume regular exercise routines and sexual activity after medical clearance." }
   ];
 
   const faqs = [
@@ -100,7 +133,7 @@ export default function LaparoscopicProceduresPage() {
               </div>
 
               {/* Main Content */}
-              <div className="w-full lg:w-[66.666%] order-1 lg:order-2 flex flex-col gap-[40px] lg:gap-[60px]">
+              <div className="w-full lg:w-[66.666%] order-1 lg:order-2 flex flex-col gap-[60px]">
                 
                 {/* Overview */}
                 <div>
@@ -113,87 +146,63 @@ export default function LaparoscopicProceduresPage() {
                       priority
                     />
                   </div>
+                  <AnimatedHeading 
+                    text="What is Laparoscopic Procedures?" 
+                    className="text-[28px] md:text-[34px] font-bold text-primary mb-[20px] leading-tight mt-6"
+                  />
                   <div className="text-text space-y-4 leading-relaxed">
                     <p>
-                      Laparoscopic procedure is the modern clinical standard for pelvic and gynecological surgeries. By using specialized keyhole instruments and a high-definition camera system, it allows gynecologists to perform complex surgeries with absolute precision, avoiding large incisions, reducing postoperative pain, and accelerating recovery.
+                      Laparoscopy (Keyhole Surgery) is the modern clinical standard for pelvic and gynecological surgeries. By using specialized instruments and a high-definition camera system inserted through tiny incisions, it allows gynecologists to perform complex surgeries with absolute precision, avoiding large abdominal cuts, reducing postoperative pain, and accelerating recovery.
                     </p>
                     <p>
-                      At Dr Poonam's Women's Clinic in Keshav Nagar, Pune, we perform advanced gynecological laparoscopy. Dr. Poonam brings over a decade of clinical and surgical expertise to treat ovarian cysts, fibroids, and diagnostic checks for fertility in sterile, state-of-the-art operating suites in Pune. For patients residing in Mundhwa or Kharadi searching for a laparoscopic keyhole surgeon around the area, our clinic provides complete evaluation and recovery support.
+                      At Dr Poonam's Women's Clinic in Keshav Nagar, Pune, we perform advanced gynecological laparoscopy. Dr. Poonam brings over a decade of clinical and surgical expertise to treat ovarian cysts, fibroids, endometriosis, and conduct diagnostic checks for fertility in sterile, state-of-the-art operating suites. For patients residing in Mundhwa or Kharadi searching for a laparoscopic keyhole surgeon around the area, our clinic provides complete evaluation and recovery support.
                     </p>
                   </div>
                 </div>
 
-                {/* Procedure Timeline */}
+                {/* Comparison Section */}
                 <div>
                   <AnimatedHeading 
-                    text="Our Keyhole Laparoscopic Steps" 
-                    className="text-[28px] md:text-[34px] font-bold text-primary mb-[30px] leading-tight" 
+                    text="Why Choose Keyhole Surgery?" 
+                    className="text-[28px] md:text-[34px] font-bold text-primary mb-[20px] leading-tight" 
                   />
-                  <div className="flex flex-col md:flex-row gap-[40px] lg:gap-[60px] items-start">
-                    {/* Left Column: Intro text */}
-                    <div className="w-full md:w-[40%] flex flex-col gap-4">
-                      <p className="text-text leading-relaxed text-[15px]">
-                        Laparoscopy keyhole surgeries follow a highly standardized clinical pathway, minimizing abdominal cuts and tissue trauma to accelerate post-operative recovery. If you live around the area of Mundhwa or Kharadi, our surgical protocol coordinates:
-                      </p>
-                      <div className="bg-[#FAF6F3] p-6 rounded-[20px] border border-divider/10 mt-2">
-                        <h4 className="font-bold text-primary mb-2 text-[16px]">Procedural Detail</h4>
-                        <p className="text-text text-[14px] leading-relaxed">
-                          From diagnostic keyhole planning and carbon dioxide insufflation to precise camera-guided surgical excisions, we ensure maximum precision.
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Right Column: Vertical Timeline */}
-                    <div className="w-full md:w-[60%] relative flex flex-col pl-2">
-                      {/* Connecting vertical line */}
-                      <div className="absolute left-[21px] top-5 bottom-12 w-[2px] bg-[#5A4A66]/20"></div>
-
-                      {processTimeline.map((step, idx) => (
-                        <div key={idx} className="flex gap-6 relative">
-                          {/* Step Icon */}
-                          <div className="relative z-10 flex items-center justify-center w-[26px] h-[26px] rounded-full bg-[#FAF6F3] border border-[#5A4A66] shrink-0 mt-1">
-                            <span className="w-2.5 h-2.5 rounded-full bg-accent"></span>
-                          </div>
-
-                          {/* Content */}
-                          <div className={`flex-1 ${idx < processTimeline.length - 1 ? 'pb-10' : 'pb-0'}`}>
-                            <div className="inline-block bg-[#5A4A66]/10 text-accent font-bold text-[12px] px-3 py-1 rounded-[100px] mb-2 uppercase tracking-wide">
-                              Stage {step.step}
-                            </div>
-                            <h3 className="text-[18px] font-bold text-primary mb-2 leading-snug">
-                              {step.title}
-                            </h3>
-                            <p className="text-text text-[14px] leading-relaxed">
-                              {step.desc}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  <p className="text-text mb-[30px] text-[15px] leading-relaxed">
+                    Whenever medically possible, Dr. Poonam opts for laparoscopic approaches over traditional open surgery due to the overwhelming benefits for the patient.
+                  </p>
+                  <ComparisonCards columns={comparisonData} />
                 </div>
 
-                {/* Post-Op Guidelines */}
-                <div>
-                  <AnimatedHeading 
-                    text="Postoperative Recovering Guidelines" 
-                    className="text-[28px] md:text-[34px] font-bold text-primary mb-[30px] leading-tight" 
+                {/* Horizontal Scroll Cards for Treatable Conditions */}
+                <div className="w-[calc(100vw-32px)] lg:w-full -ml-4 lg:ml-0 px-4 lg:px-0">
+                  <HorizontalScrollCards 
+                    title="Conditions Treated via Laparoscopy" 
+                    subtitle="This minimally invasive technique is highly versatile and used for both diagnostic and operative procedures."
+                    cards={treatableConditions} 
                   />
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {postOpCareTips.map((tip, idx) => (
-                      <div key={idx} className="bg-white p-6 rounded-[20px] border border-divider/10 shadow-sm flex flex-col">
-                        <div className="w-10 h-10 bg-accent/15 rounded-full flex items-center justify-center text-accent mb-4 shrink-0">
-                          <Activity className="w-5 h-5" />
-                        </div>
-                        <h3 className="text-[18px] font-bold text-primary mb-2">{tip.title}</h3>
-                        <p className="text-text text-[14px] leading-relaxed">{tip.desc}</p>
-                      </div>
-                    ))}
-                  </div>
+                </div>
+
+                {/* Surgical Steps (Vertical Timeline) */}
+                <div className="bg-white p-6 md:p-10 rounded-[24px] shadow-sm border border-divider/10">
+                  <AnimatedHeading 
+                    text="How the Procedure is Performed" 
+                    className="text-[28px] md:text-[34px] font-bold text-primary mb-[20px] leading-tight" 
+                  />
+                  <p className="text-text mb-[40px] text-[15px] leading-relaxed">
+                    Understanding the surgical process helps alleviate pre-operative anxiety. Here is exactly what happens during a standard laparoscopic surgery.
+                  </p>
+                  <VerticalTimeline items={procedureSteps} />
+                </div>
+
+                {/* Recovery Process (Circular Process) */}
+                <div>
+                  <CircularProcess 
+                    title="Rapid Post-Op Recovery" 
+                    steps={recoveryTimeline} 
+                  />
                 </div>
 
                 {/* Why Choose Us */}
-                <div className="bg-[#242736] text-white rounded-[24px] p-8 md:p-10 flex flex-col md:flex-row items-center gap-[45px]">
+                <div className="bg-[#151722] text-white rounded-[24px] p-8 md:p-10 flex flex-col md:flex-row items-center gap-[45px]">
                   <div className="w-full md:w-2/3 flex flex-col gap-6">
                     <h3 className="text-[26px] font-bold text-white leading-tight">
                       Why Choose Dr. Poonam for Laparoscopy?
@@ -209,15 +218,15 @@ export default function LaparoscopicProceduresPage() {
                       </li>
                       <li className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-accent mt-1 shrink-0" />
-                        <span><strong>Safe Fertility Assessment:</strong> Diagnostic laparoscopy and chromotubation to evaluate tubal patency and pelvic health.</span>
+                        <span><strong>Safe Fertility Assessment:</strong> Diagnostic laparoscopy and chromotubation to safely evaluate tubal patency and pelvic health.</span>
                       </li>
                     </ul>
                   </div>
                   <div className="w-full md:w-1/3 flex justify-center shrink-0">
                     <div className="bg-white/10 border border-white/15 p-6 rounded-[20px] text-center w-full max-w-[220px]">
-                      <div className="text-[44px] font-bold text-accent mb-1">5.0</div>
+                      <div className="text-[44px] font-bold text-white mb-1">5.0</div>
                       <p className="text-[13px] font-bold uppercase tracking-wider text-white/90 mb-1">Google Rating</p>
-                      <p className="text-[12px] text-white/70">Based on 42 Verified Reviews</p>
+                      <p className="text-[14px] md:text-[15px] text-white/80">Based on 42 Verified Reviews</p>
                     </div>
                   </div>
                 </div>

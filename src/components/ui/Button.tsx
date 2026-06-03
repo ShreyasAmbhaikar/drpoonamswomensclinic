@@ -11,7 +11,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "primary", size = "default", href, icon, children, ...props }, ref) => {
-    const baseStyles = "inline-flex items-center justify-center font-bold transition-all duration-400 ease-in-out whitespace-nowrap rounded-[10px]";
+    const baseStyles = "inline-flex items-center justify-center font-bold transition-all duration-400 ease-in-out rounded-[10px] text-center max-w-full";
     
     const variants = {
       primary: "bg-primary text-white hover:bg-accent",
@@ -20,9 +20,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     };
     
     const sizes = {
-      default: "text-[16px] leading-[1em] py-[16px] px-[30px]",
-      sm: "text-[14px] leading-[1em] py-[13px] px-[20px]",
-      lg: "text-[18px] leading-[1em] py-[20px] px-[40px]",
+      default: "text-[16px] leading-[1.2em] py-[16px] px-[30px]",
+      sm: "text-[14px] leading-[1.2em] py-[13px] px-[20px]",
+      lg: "text-[18px] leading-[1.2em] py-[20px] px-[40px]",
     };
 
     const classes = cn(
@@ -34,9 +34,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const content = (
       <>
-        {children}
+        <span>{children}</span>
         {icon && (
-          <span className="ml-2 bg-white/20 w-[30px] h-[30px] rounded-full flex items-center justify-center">
+          <span className="ml-2 shrink-0 bg-white/20 w-[30px] h-[30px] rounded-full flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
           </span>
         )}

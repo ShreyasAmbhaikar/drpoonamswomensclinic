@@ -3,7 +3,11 @@ import PageHeader from '@/components/landing/PageHeader';
 import ServiceSidebar from '@/components/landing/ServiceSidebar';
 import Accordion from '@/components/ui/Accordion';
 import { AnimatedHeading } from '@/components/ui/AnimatedHeading';
-import { Heart, ShieldCheck, CheckCircle } from 'lucide-react';
+import VerticalTimeline from '@/components/ui/VerticalTimeline';
+import ComparisonCards from '@/components/ui/ComparisonCards';
+import HorizontalScrollCards from '@/components/ui/HorizontalScrollCards';
+import CircularProcess from '@/components/ui/CircularProcess';
+import { ShieldCheck, CheckCircle, Activity, Heart, Stethoscope } from 'lucide-react';
 
 export const metadata = {
   title: "Cervical Cancer Screening & HPV Vaccine in Keshav Nagar Pune",
@@ -20,38 +24,63 @@ export default function CervicalCancerPage() {
     { label: 'Cervical Screening & HPV Vaccine' },
   ];
 
+  const comparisonData: [any, any] = [
+    {
+      title: "Gardasil 9 (International)",
+      theme: "secondary",
+      items: [
+        { feature: "Coverage", isAvailable: "Protects against 9 high-risk HPV strains." },
+        { feature: "Efficacy", isAvailable: "Extremely high, global standard for over a decade." },
+        { feature: "Target Age", isAvailable: "Approved for ages 9 to 45 (ideal before 26)." },
+        { feature: "Dosing", isAvailable: "2 or 3 doses depending on age at first dose." }
+      ]
+    },
+    {
+      title: "Cervavac (Indigenous)",
+      theme: "primary",
+      items: [
+        { feature: "Coverage", isAvailable: "Quadrivalent (Protects against 4 high-risk strains)." },
+        { feature: "Efficacy", isAvailable: "Highly effective against the most common Indian strains." },
+        { feature: "Target Age", isAvailable: "Approved for girls and women ages 9 to 26." },
+        { feature: "Dosing", isAvailable: "Similar 2 or 3 dose schedule based on age." }
+      ]
+    }
+  ];
+
   const screeningPrograms = [
+    { title: "Liquid-Based Pap Smear", description: "A simple, highly accurate test to collect cervical cell samples. Helps detect pre-cancerous cellular changes early.", icon: <Stethoscope className="w-5 h-5" /> },
+    { title: "Advanced HPV DNA Testing", description: "Molecular diagnostics that check for the presence of high-risk HPV genotypes directly linked to cervical cancer.", icon: <Activity className="w-5 h-5" /> },
+    { title: "Colposcopy Evaluation", description: "If a Pap smear is abnormal, a colposcope (magnifying instrument) is used to closely examine the cervix for signs of disease.", icon: <Heart className="w-5 h-5" /> },
+    { title: "Annual Gynaecological Exam", description: "A comprehensive physical screening evaluating overall cervix health, pelvic structure, and general wellness.", icon: <ShieldCheck className="w-5 h-5" /> }
+  ];
+
+  const vaccinationTimeline = [
     {
-      title: 'Liquid-Based Pap Smear Cytology',
-      desc: 'A simple, highly accurate test to collect cervical cell samples. It helps detect pre-cancerous cellular changes early, allowing for successful preventive action.'
+      title: 'Consultation & Vaccine Selection',
+      description: 'During a private consultation, Dr. Poonam will discuss your medical history, age, and lifestyle to recommend the most appropriate HPV vaccine (Gardasil 9 or Cervavac).',
+      icon: <Activity className="w-5 h-5" />
     },
     {
-      title: 'Advanced HPV DNA Testing',
-      desc: 'A molecular diagnostics screen that checks for the presence of high-risk human papillomavirus (HPV) genotypes (such as types 16 and 18) directly linked to cervical cancer.'
+      title: 'First Dose Administration',
+      description: 'The vaccine is given as a simple intramuscular injection in the upper arm. The process is quick, and side effects are generally limited to mild soreness at the injection site.',
+      icon: <ShieldCheck className="w-5 h-5" />
     },
     {
-      title: 'Modern HPV Vaccination (Gardasil 9 / Cervavac)',
-      desc: 'Administering the latest WHO-approved HPV vaccines. Vaccinating girls and women builds robust immunity against common cancer-causing viral strains.'
+      title: 'Dose Tracking & Reminders',
+      description: 'Our clinic logs your vaccination date and sets up digital reminders to ensure you do not miss your critical follow-up doses (at 1-2 months and 6 months depending on schedule).',
+      icon: <CheckCircle className="w-5 h-5" />
     },
     {
-      title: 'Annual Gynaecological Examination',
-      desc: 'A comprehensive visual and physical screening of reproductive health, evaluating overall cervix health, pelvic structure, and identifying potential concerns early.'
+      title: 'Ongoing Screening Routine',
+      description: 'Even after full vaccination, routine Pap smears are still required as the vaccine does not protect against all strains of HPV, but it does prevent the vast majority.',
+      icon: <Stethoscope className="w-5 h-5" />
     }
   ];
 
   const vaccineSchedules = [
-    {
-      title: 'Dosage for Ages 9 to 14',
-      desc: 'Requires a 2-dose schedule: the second dose is administered 6 months after the first dose, providing lifetime protection.'
-    },
-    {
-      title: 'Dosage for Ages 15 to 45',
-      desc: 'Requires a 3-dose schedule: the second dose is given at 1-2 months, and the third dose is given 6 months after the first.'
-    },
-    {
-      title: 'Screening Frequency',
-      desc: 'Pap smears are recommended every 3 years from age 21 to 29; a combination Pap + HPV DNA test every 5 years from age 30 to 65.'
-    }
+    { title: "Ages 9 to 14", description: "Requires a 2-dose schedule: the second dose is administered 6 months after the first dose. This provides lifetime protection." },
+    { title: "Ages 15 to 45", description: "Requires a 3-dose schedule: the second dose is given at 1-2 months, and the third dose is given 6 months after the first." },
+    { title: "Screening Frequency", description: "Pap smears are recommended every 3 years from age 21. Co-testing (Pap + HPV) is recommended every 5 years from age 30." }
   ];
 
   const faqs = [
@@ -96,7 +125,7 @@ export default function CervicalCancerPage() {
               </div>
 
               {/* Main Content */}
-              <div className="w-full lg:w-[66.666%] order-1 lg:order-2 flex flex-col gap-[40px] lg:gap-[60px]">
+              <div className="w-full lg:w-[66.666%] order-1 lg:order-2 flex flex-col gap-[60px]">
                 
                 {/* Overview */}
                 <div>
@@ -109,67 +138,63 @@ export default function CervicalCancerPage() {
                       priority
                     />
                   </div>
+                  <AnimatedHeading 
+                    text="What is Cervical Screening & HPV Vaccine?" 
+                    className="text-[28px] md:text-[34px] font-bold text-primary mb-[20px] leading-tight mt-6"
+                  />
                   <div className="text-text space-y-4 leading-relaxed">
                     <p>
                       Cervical cancer is one of the most preventable types of cancer in women. It is primarily caused by persistent infection with high-risk strains of the Human Papillomavirus (HPV). Through regular screening tests like Pap smears and HPV DNA tests, alongside timely HPV vaccination, the risk of developing cervical cancer can be reduced by over 90%.
                     </p>
                     <p>
-                      At Dr Poonam's Women's Clinic in Keshav Nagar, Pune, we are dedicated to preventative women's wellness. Dr. Poonam offers gentle and confidential Pap smear screenings, advanced HPV DNA tests, and approved HPV vaccines (including Gardasil 9 and Cervavac) to safeguard your long-term health. If you reside in Mundhwa or Kharadi and are searching for a cervical cancer vaccine or screening around the area, our clinic provides convenient access to quality preventative care.
+                      At Dr Poonam's Women's Clinic in Keshav Nagar, Pune, we are dedicated to proactive preventative women's wellness. Dr. Poonam offers gentle and confidential Pap smear screenings, advanced HPV DNA tests, and approved HPV vaccines (including Gardasil 9 and Cervavac) to safeguard your long-term health. If you reside in Mundhwa or Kharadi and are searching for a cervical cancer vaccine or screening clinic, we provide convenient access to quality preventative care.
                     </p>
                   </div>
                 </div>
 
-                {/* Preventive Health Programs (Fluid Layout) */}
+                {/* Comparison Section */}
                 <div>
                   <AnimatedHeading 
-                    text="Cervical Cancer Prevention Programs" 
+                    text="Choosing the Right HPV Vaccine" 
+                    className="text-[28px] md:text-[34px] font-bold text-primary mb-[20px] leading-tight" 
+                  />
+                  <p className="text-text mb-[30px] text-[15px] leading-relaxed">
+                    We offer globally recognized and indigenous HPV vaccines. Dr. Poonam will help you select the best option based on age and clinical guidelines.
+                  </p>
+                  <ComparisonCards columns={comparisonData} />
+                </div>
+
+                {/* Horizontal Scroll Cards for Programs */}
+                <div className="w-[calc(100vw-32px)] lg:w-full -ml-4 lg:ml-0 px-4 lg:px-0">
+                  <HorizontalScrollCards 
+                    title="Comprehensive Screening Programs" 
+                    subtitle="Detecting cell anomalies years before they could turn malignant is the key to prevention."
+                    cards={screeningPrograms} 
+                  />
+                </div>
+
+                {/* Procedure Steps (Vertical Timeline) */}
+                <div className="bg-white p-6 md:p-10 rounded-[24px] shadow-sm border border-divider/10">
+                  <AnimatedHeading 
+                    text="The Vaccination Journey" 
                     className="text-[28px] md:text-[34px] font-bold text-primary mb-[20px] leading-tight" 
                   />
                   <p className="text-text mb-[40px] text-[15px] leading-relaxed">
-                    For women living in Keshav Nagar, Mundhwa, and nearby locations seeking a gynaecologist near me for preventative screenings, we offer structured diagnostic packages. These programs help detect cells anomalies years before they could turn malignant:
+                    Vaccination is a straightforward process, but strict adherence to the dosing schedule is necessary for full immunity.
                   </p>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {screeningPrograms.map((prog, idx) => (
-                      <div 
-                        key={idx} 
-                        className="bg-white p-6 rounded-[24px] border border-divider/10 hover:border-accent hover:bg-secondary/15 transition-all duration-300 shadow-sm flex flex-col gap-3"
-                      >
-                        <div className="w-12 h-12 bg-accent/10 text-accent rounded-2xl flex items-center justify-center shrink-0">
-                          <ShieldCheck className="w-6 h-6" />
-                        </div>
-                        <h3 className="font-bold text-primary text-[18px] leading-snug">
-                          {prog.title}
-                        </h3>
-                        <p className="text-text text-[14px] leading-relaxed">
-                          {prog.desc}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
+                  <VerticalTimeline items={vaccinationTimeline} />
                 </div>
 
-                {/* Vaccine Schedules */}
+                {/* Dosage Schedules (Circular Process) */}
                 <div>
-                  <AnimatedHeading 
-                    text="Dosage Schedules & Frequencies" 
-                    className="text-[28px] md:text-[34px] font-bold text-primary mb-[30px] leading-tight" 
+                  <CircularProcess 
+                    title="Dosage & Screening Frequency" 
+                    steps={vaccineSchedules} 
                   />
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {vaccineSchedules.map((tip, idx) => (
-                      <div key={idx} className="bg-white p-6 rounded-[20px] border border-divider/10 shadow-sm flex flex-col">
-                        <div className="w-10 h-10 bg-accent/15 rounded-full flex items-center justify-center text-accent mb-4 shrink-0">
-                          <ShieldCheck className="w-5 h-5" />
-                        </div>
-                        <h3 className="text-[18px] font-bold text-primary mb-2">{tip.title}</h3>
-                        <p className="text-text text-[14px] leading-relaxed">{tip.desc}</p>
-                      </div>
-                    ))}
-                  </div>
                 </div>
 
                 {/* Why Choose Us */}
-                <div className="bg-[#242736] text-white rounded-[24px] p-8 md:p-10 flex flex-col md:flex-row items-center gap-[45px]">
+                <div className="bg-[#151722] text-white rounded-[24px] p-8 md:p-10 flex flex-col md:flex-row items-center gap-[45px]">
                   <div className="w-full md:w-2/3 flex flex-col gap-6">
                     <h3 className="text-[26px] font-bold text-white leading-tight">
                       Why Choose Dr. Poonam's Clinic?
@@ -191,9 +216,9 @@ export default function CervicalCancerPage() {
                   </div>
                   <div className="w-full md:w-1/3 flex justify-center shrink-0">
                     <div className="bg-white/10 border border-white/15 p-6 rounded-[20px] text-center w-full max-w-[220px]">
-                      <div className="text-[44px] font-bold text-accent mb-1">5.0</div>
+                      <div className="text-[44px] font-bold text-white mb-1">5.0</div>
                       <p className="text-[13px] font-bold uppercase tracking-wider text-white/90 mb-1">Google Rating</p>
-                      <p className="text-[12px] text-white/70">Based on 42 Verified Reviews</p>
+                      <p className="text-[14px] md:text-[15px] text-white/80">Based on 42 Verified Reviews</p>
                     </div>
                   </div>
                 </div>

@@ -3,7 +3,11 @@ import PageHeader from '@/components/landing/PageHeader';
 import ServiceSidebar from '@/components/landing/ServiceSidebar';
 import Accordion from '@/components/ui/Accordion';
 import { AnimatedHeading } from '@/components/ui/AnimatedHeading';
-import { Heart, CheckCircle, ShieldCheck } from 'lucide-react';
+import VerticalTimeline from '@/components/ui/VerticalTimeline';
+import ComparisonCards from '@/components/ui/ComparisonCards';
+import HorizontalScrollCards from '@/components/ui/HorizontalScrollCards';
+import CircularProcess from '@/components/ui/CircularProcess';
+import { ShieldCheck, CheckCircle, Activity, Heart, Stethoscope } from 'lucide-react';
 
 export const metadata = {
   title: "Pre Conceptional Counselling in Keshav Nagar Pune | Dr Poonam's Clinic",
@@ -20,42 +24,63 @@ export default function PreConceptionalPage() {
     { label: 'Pre Conceptional Counselling' },
   ];
 
+  const comparisonData: [any, any] = [
+    {
+      title: "Unplanned Pregnancy",
+      theme: "secondary",
+      items: [
+        { feature: "Neural Tube Risk", isAvailable: "Higher risk if folic acid was not taken prior to conception." },
+        { feature: "Chronic Conditions", isAvailable: "Thyroid or blood sugar may be uncontrolled during early development." },
+        { feature: "Infection Immunity", isAvailable: "Mother may lack immunity to Rubella or Varicella." },
+        { feature: "Stress Levels", isAvailable: "Often associated with higher emotional and financial anxiety." }
+      ]
+    },
+    {
+      title: "Planned Pregnancy",
+      theme: "primary",
+      items: [
+        { feature: "Neural Tube Risk", isAvailable: "Risk reduced by 70% with pre-pregnancy folic acid." },
+        { feature: "Chronic Conditions", isAvailable: "Conditions are medically stabilized before conception." },
+        { feature: "Infection Immunity", isAvailable: "Vaccines are caught up to protect the fetus from infections." },
+        { feature: "Stress Levels", isAvailable: "Lower anxiety due to physical readiness and clear guidance." }
+      ]
+    }
+  ];
+
+  const essentialTests = [
+    { title: "Complete Blood Count", description: "Screens for anemia to ensure you have enough iron to support increased blood volume during pregnancy.", icon: <Activity className="w-5 h-5" /> },
+    { title: "Thyroid Profile (TSH)", description: "Checks for hypothyroidism, which can affect fertility and early fetal brain development.", icon: <Stethoscope className="w-5 h-5" /> },
+    { title: "Viral Markers & Immunity", description: "Screens for Rubella, Hepatitis B, HIV, and checks your immunity status for critical viral infections.", icon: <ShieldCheck className="w-5 h-5" /> },
+    { title: "Blood Sugar (HbA1c)", description: "Evaluates your average blood sugar levels to rule out pre-diabetes or diabetes before conception.", icon: <Heart className="w-5 h-5" /> }
+  ];
+
   const processTimeline = [
     {
-      step: '01',
       title: 'Initial Health Assessment',
-      desc: 'Conducting a thorough check of maternal medical history, BMI, blood pressure, lifestyle habits, and evaluating any history of chronic conditions or previous complicated pregnancies.'
+      description: 'Conducting a thorough check of maternal medical history, BMI, blood pressure, lifestyle habits, and evaluating any history of chronic conditions or previous complicated pregnancies.',
+      icon: <Stethoscope className="w-5 h-5" />
     },
     {
-      step: '02',
       title: 'Essential Diagnostic Screening',
-      desc: 'Recommending routine pre-pregnancy tests including complete blood count, blood typing (Rh factor), thyroid levels (TSH), blood sugar (HbA1c), rubella antibodies, and thalassemia screen.'
+      description: 'Running routine pre-pregnancy blood tests including complete blood count, blood typing (Rh factor), thyroid levels (TSH), blood sugar (HbA1c), and rubella antibodies.',
+      icon: <Activity className="w-5 h-5" />
     },
     {
-      step: '03',
       title: 'Nutritional Optimizing & Supplementation',
-      desc: 'Prescribing vital pre-pregnancy vitamins (folic acid) and advising on dietary transitions, while adjusting any ongoing medications to guarantee fetal safety.'
+      description: 'Prescribing vital pre-pregnancy vitamins (folic acid) and advising on dietary transitions, while adjusting any ongoing medications to guarantee fetal safety.',
+      icon: <Heart className="w-5 h-5" />
     },
     {
-      step: '04',
       title: 'Ovulation & Fertile Window Tracking',
-      desc: 'Educating couples on tracking ovulation cycles, understanding fertile windows, and modifying lifestyle habits to support healthy conception.'
+      description: 'Educating couples on tracking ovulation cycles, understanding fertile windows, and modifying lifestyle habits to confidently support healthy conception.',
+      icon: <CheckCircle className="w-5 h-5" />
     }
   ];
 
   const planningTips = [
-    {
-      title: 'Folic Acid Supplementation',
-      desc: 'Starting a daily dose of 400 mcg of folic acid at least 1 to 3 months before active trying to substantially reduce fetal neural tube birth defects.'
-    },
-    {
-      title: 'Immunization Check',
-      desc: 'Verifying vaccine history and updating immunity against Rubella (German Measles), Varicella, and Hepatitis B before planning conception.'
-    },
-    {
-      title: 'Chronic Condition Control',
-      desc: 'Achieving safe control levels for chronic maternal concerns like diabetes, thyroid, or hypertension prior to stopping active contraception.'
-    }
+    { title: "Folic Acid", description: "Start 400 mcg of folic acid daily at least 1-3 months before trying to conceive to prevent neural tube defects." },
+    { title: "Weight Management", description: "Achieving a healthy BMI improves fertility and significantly lowers the risk of gestational diabetes and preeclampsia." },
+    { title: "Medication Review", description: "Review all current medications with Dr. Poonam. Some acne or blood pressure meds must be stopped before pregnancy." }
   ];
 
   const faqs = [
@@ -100,7 +125,7 @@ export default function PreConceptionalPage() {
               </div>
 
               {/* Main Content */}
-              <div className="w-full lg:w-[66.666%] order-1 lg:order-2 flex flex-col gap-[40px] lg:gap-[60px]">
+              <div className="w-full lg:w-[66.666%] order-1 lg:order-2 flex flex-col gap-[60px]">
                 
                 {/* Overview */}
                 <div>
@@ -113,90 +138,66 @@ export default function PreConceptionalPage() {
                       priority
                     />
                   </div>
+                  <AnimatedHeading 
+                    text="What is Pre Conceptional Counselling?" 
+                    className="text-[28px] md:text-[34px] font-bold text-primary mb-[20px] leading-tight mt-6"
+                  />
                   <div className="text-text space-y-4 leading-relaxed">
                     <p>
                       Pre-conceptional counseling is a proactive, clinical wellness strategy for couples preparing to start a family. By thoroughly evaluating physical wellness, genetic histories, immunization status, and lifestyle habits before pregnancy begins, couples can significantly reduce pregnancy risks and support healthy fetal development from day one.
                     </p>
                     <p>
-                      At Dr Poonam's Women's Clinic in Keshav Nagar, Pune, we provide supportive, expert pre-pregnancy planning. Dr. Poonam conducts comprehensive diagnostic screens, guides you through proper folic acid dosing, and advises on optimal health choices to make your parenthood journey safe and stress-free. Whether you are living in Mundhwa or Kharadi and looking for a reliable pre-pregnancy counselor around the area, our clinic provides personalized care tailored to your needs.
+                      At Dr Poonam's Women's Clinic in Keshav Nagar, Pune, we provide highly supportive, expert pre-pregnancy planning. Dr. Poonam conducts comprehensive diagnostic screens, guides you through proper folic acid dosing, and advises on optimal health choices to make your parenthood journey safe and stress-free. Whether you are living in Mundhwa or Kharadi and looking for a reliable pre-pregnancy counselor, our clinic provides personalized care tailored to your specific needs.
                     </p>
                   </div>
                 </div>
 
-                {/* Counselling Process */}
+                {/* Comparison Section */}
                 <div>
                   <AnimatedHeading 
-                    text="Our Pre-pregnancy Counseling Process" 
-                    className="text-[28px] md:text-[34px] font-bold text-primary mb-[30px] leading-tight" 
+                    text="Why Plan Ahead?" 
+                    className="text-[28px] md:text-[34px] font-bold text-primary mb-[20px] leading-tight" 
                   />
-                  <div className="flex flex-col md:flex-row gap-[40px] lg:gap-[60px] items-start">
-                    {/* Left Column: Intro text */}
-                    <div className="w-full md:w-[40%] flex flex-col gap-4">
-                      <p className="text-text leading-relaxed text-[15px]">
-                        Preparing for pregnancy involves a series of physical health checks and proactive counseling. If you reside around the area of Mundhwa or Kharadi, our structured counseling process helps couples identify and manage any potential risk factors early:
-                      </p>
-                      <div className="bg-[#FAF6F3] p-6 rounded-[20px] border border-divider/10 mt-2">
-                        <h4 className="font-bold text-primary mb-2 text-[16px]">Counselling Path</h4>
-                        <p className="text-text text-[14px] leading-relaxed">
-                          From general medical reviews to specific nutrition planning and ovulation tracking, we align each step with your pregnancy goals.
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Right Column: Vertical Timeline */}
-                    <div className="w-full md:w-[60%] relative flex flex-col pl-2">
-                      {/* Connecting vertical line */}
-                      <div className="absolute left-[21px] top-5 bottom-12 w-[2px] bg-[#5A4A66]/20"></div>
-
-                      {processTimeline.map((step, idx) => (
-                        <div key={idx} className="flex gap-6 relative">
-                          {/* Step Icon */}
-                          <div className="relative z-10 flex items-center justify-center w-[26px] h-[26px] rounded-full bg-[#FAF6F3] border border-[#5A4A66] shrink-0 mt-1">
-                            <span className="w-2.5 h-2.5 rounded-full bg-accent"></span>
-                          </div>
-
-                          {/* Content */}
-                          <div className={`flex-1 ${idx < processTimeline.length - 1 ? 'pb-10' : 'pb-0'}`}>
-                            <div className="inline-block bg-[#5A4A66]/10 text-accent font-bold text-[12px] px-3 py-1 rounded-[100px] mb-2 uppercase tracking-wide">
-                              Stage {step.step}
-                            </div>
-                            <h3 className="text-[18px] font-bold text-primary mb-2 leading-snug">
-                              {step.title}
-                            </h3>
-                            <p className="text-text text-[14px] leading-relaxed">
-                              {step.desc}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  <p className="text-text mb-[30px] text-[15px] leading-relaxed">
+                    A planned pregnancy allows us to create the perfect biological environment for your baby to grow, significantly reducing risks.
+                  </p>
+                  <ComparisonCards columns={comparisonData} />
                 </div>
 
-                {/* Planning Guidelines */}
-                <div>
-                  <AnimatedHeading 
-                    text="Pre-pregnancy Guidelines & Preparations" 
-                    className="text-[28px] md:text-[34px] font-bold text-primary mb-[30px] leading-tight" 
+                {/* Horizontal Scroll Cards for Tests */}
+                <div className="w-[calc(100vw-32px)] lg:w-full -ml-4 lg:ml-0 px-4 lg:px-0">
+                  <HorizontalScrollCards 
+                    title="Essential Pre-Pregnancy Screens" 
+                    subtitle="We run a comprehensive panel of tests to ensure your body is fully prepared for the demands of pregnancy."
+                    cards={essentialTests} 
                   />
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {planningTips.map((tip, idx) => (
-                      <div key={idx} className="bg-white p-6 rounded-[20px] border border-divider/10 shadow-sm flex flex-col">
-                        <div className="w-10 h-10 bg-accent/15 rounded-full flex items-center justify-center text-accent mb-4 shrink-0">
-                          <Heart className="w-5 h-5" />
-                        </div>
-                        <h3 className="text-[18px] font-bold text-primary mb-2">{tip.title}</h3>
-                        <p className="text-text text-[14px] leading-relaxed">{tip.desc}</p>
-                      </div>
-                    ))}
-                  </div>
+                </div>
+
+                {/* Process (Vertical Timeline) */}
+                <div className="bg-white p-6 md:p-10 rounded-[24px] shadow-sm border border-divider/10">
+                  <AnimatedHeading 
+                    text="Our Pre-pregnancy Process" 
+                    className="text-[28px] md:text-[34px] font-bold text-primary mb-[20px] leading-tight" 
+                  />
+                  <p className="text-text mb-[40px] text-[15px] leading-relaxed">
+                    From general medical reviews to specific nutrition planning and ovulation tracking, we align each step with your pregnancy goals.
+                  </p>
+                  <VerticalTimeline items={processTimeline} />
+                </div>
+
+                {/* Planning Tips (Circular Process) */}
+                <div>
+                  <CircularProcess 
+                    title="Vital Preparation Steps" 
+                    steps={planningTips} 
+                  />
                 </div>
 
                 {/* Why Choose Us */}
-                <div className="bg-[#242736] text-white rounded-[24px] p-8 md:p-10 flex flex-col md:flex-row items-center gap-[45px]">
+                <div className="bg-[#151722] text-white rounded-[24px] p-8 md:p-10 flex flex-col md:flex-row items-center gap-[45px]">
                   <div className="w-full md:w-2/3 flex flex-col gap-6">
                     <h3 className="text-[26px] font-bold text-white leading-tight">
-                      Why Choose Dr. Poonam for Pre-pregnancy Planning?
+                      Why Choose Dr. Poonam for Planning?
                     </h3>
                     <ul className="space-y-3">
                       <li className="flex items-start gap-3">
@@ -205,7 +206,7 @@ export default function PreConceptionalPage() {
                       </li>
                       <li className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-accent mt-1 shrink-0" />
-                        <span><strong>Hormonal & Nutritional Balance:</strong> Direct advice on pre-pregnancy supplements and vitamin schedules.</span>
+                        <span><strong>Nutritional Balance:</strong> Direct advice on pre-pregnancy supplements and vitamin schedules.</span>
                       </li>
                       <li className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-accent mt-1 shrink-0" />
@@ -215,9 +216,9 @@ export default function PreConceptionalPage() {
                   </div>
                   <div className="w-full md:w-1/3 flex justify-center shrink-0">
                     <div className="bg-white/10 border border-white/15 p-6 rounded-[20px] text-center w-full max-w-[220px]">
-                      <div className="text-[44px] font-bold text-accent mb-1">5.0</div>
+                      <div className="text-[44px] font-bold text-white mb-1">5.0</div>
                       <p className="text-[13px] font-bold uppercase tracking-wider text-white/90 mb-1">Google Rating</p>
-                      <p className="text-[12px] text-white/70">Based on 42 Verified Reviews</p>
+                      <p className="text-[14px] md:text-[15px] text-white/80">Based on 42 Verified Reviews</p>
                     </div>
                   </div>
                 </div>

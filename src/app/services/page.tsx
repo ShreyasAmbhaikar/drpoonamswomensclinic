@@ -11,7 +11,11 @@ import {
   FolderLock,
   Scissors,
   FileSpreadsheet,
-  ArrowRight 
+  ArrowRight,
+  Eye,
+  HeartHandshake,
+  Droplet,
+  AlertTriangle
 } from "lucide-react";
 import Link from "next/link";
 
@@ -98,6 +102,83 @@ export default function ServicesPage() {
       title: "Laparoscopic Procedures",
       desc: "Minimally invasive keyhole surgeries for ovarian cysts, uterine fibroids, endometriosis, and diagnostic laparoscopy.",
       href: "/laparoscopic-procedures-in-keshav-nagar/",
+      isActive: true,
+    },
+    {
+      icon: <Eye className="w-10 h-10 text-accent" />,
+      title: "Hysteroscopy",
+      desc: "Minimally invasive diagnostic and operative visualization of the uterine cavity to evaluate abnormal bleeding and fertility.",
+      href: "/hysteroscopy-in-keshav-nagar/",
+      isActive: true,
+    },
+    {
+      icon: <Baby className="w-10 h-10 text-accent" />,
+      title: "Pregnancy Care (Maternity)",
+      desc: "Nurturing prenatal health checkups, routine anomaly scans, and comprehensive guidance for expectant mothers.",
+      href: "/pregnancy-care-in-keshav-nagar/",
+      isActive: true,
+    },
+    {
+      icon: <AlertTriangle className="w-10 h-10 text-accent" />,
+      title: "High Risk Pregnancy Management",
+      desc: "Specialized clinical vigilance and proactive care plans for gestational diabetes, hypertension, and complex pregnancies.",
+      href: "/high-risk-pregnancy-management-in-keshav-nagar/",
+      isActive: true,
+    },
+    {
+      icon: <HeartHandshake className="w-10 h-10 text-accent" />,
+      title: "Pubertal Counselling",
+      desc: "Sensitive and friendly clinical guidance for young girls transitioning through menstruation, puberty, and hormones.",
+      href: "/pubertal-counselling-in-keshav-nagar/",
+      isActive: true,
+    },
+    {
+      icon: <Droplet className="w-10 h-10 text-accent" />,
+      title: "Menstrual Hygiene & Health",
+      desc: "Comprehensive solutions for painful cramps, infection prevention, abnormal bleeding, and sanitary hygiene education.",
+      href: "/menstrual-hygiene-in-keshav-nagar/",
+      isActive: true,
+    },
+    {
+      icon: <ShieldCheck className="w-10 h-10 text-accent" />,
+      title: "Contraception Advice",
+      desc: "Personalized guidance on birth control options, Copper T insertions, oral pills, and emergency contraception safety.",
+      href: "/contraception-advice-in-keshav-nagar/",
+      isActive: true,
+    },
+    {
+      icon: <Users className="w-10 h-10 text-accent" />,
+      title: "Lactational Counselling",
+      desc: "Compassionate postpartum support helping mothers with correct breastfeeding latching, supply regulation, and mastitis relief.",
+      href: "/lactational-counselling-in-keshav-nagar/",
+      isActive: true,
+    },
+    {
+      icon: <HeartHandshake className="w-10 h-10 text-accent" />,
+      title: "Family Planning Center",
+      desc: "Expert spacing counselling, pre-conception checks, and long-term birth control options to plan your family's health safely.",
+      href: "/family-planning-center-in-keshav-nagar/",
+      isActive: true,
+    },
+    {
+      icon: <AlertTriangle className="w-10 h-10 text-accent" />,
+      title: "Pelvic Infections Treatment",
+      desc: "Targeted diagnostics and treatment plans for Pelvic Inflammatory Disease (PID) and recurring vaginal infections.",
+      href: "/pelvic-infections-treatment-in-keshav-nagar/",
+      isActive: true,
+    },
+    {
+      icon: <Eye className="w-10 h-10 text-accent" />,
+      title: "Cancer Screening",
+      desc: "Preventative cervical Pap smears, HPV DNA screening, and breast checks to identify abnormalities early for effective treatment.",
+      href: "/cancer-screening-in-keshav-nagar/",
+      isActive: true,
+    },
+    {
+      icon: <Activity className="w-10 h-10 text-accent" />,
+      title: "Addressing Menstrual Cycle Problems",
+      desc: "Clinical evaluation and lifestyle solutions for irregular periods, heavy bleeding (menorrhagia), and severe cramping.",
+      href: "/menstrual-cycle-problems-in-keshav-nagar/",
       isActive: true,
     },
   ];

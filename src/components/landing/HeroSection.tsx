@@ -28,7 +28,7 @@ export const HeroSection = () => {
             <div className="grid grid-cols-3 gap-4 border-t border-divider pt-[40px] mb-[40px] animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
               <div>
                 <h3 className="text-[32px] md:text-[36px] font-bold text-primary leading-[1.2em]">
-                  <Counter end={10} suffix="+" />
+                  <Counter end={15} suffix="+" />
                 </h3>
                 <p className="text-[14px] text-text">Years of experience</p>
               </div>
@@ -77,8 +77,8 @@ export const HeroSection = () => {
               {/* Image Container */}
               <div className="relative rounded-[30px] overflow-hidden aspect-[1/1.12] w-full animate-[serviceratingmoveobject_3s_ease-in-out_infinite_alternate]">
                 <Image 
-                  src="/images/hero-image.webp" 
-                  alt="IVF Doctor consulting a patient" 
+                  src="/images/doctor-poonam-hero.webp" 
+                  alt="Dr. Poonam consulting in her office at Dr. Poonam's Women's Clinic" 
                   fill 
                   className="object-cover"
                   priority
@@ -106,8 +106,8 @@ export const HeroSection = () => {
                       </svg>
                     ))}
                   </div>
-                  <h4 className="text-[18px] font-bold text-primary leading-tight">Best Service & 5 Star</h4>
-                  <p className="text-[14px] text-text m-0 leading-normal">State-of-the-art lab with latest reproductive technology</p>
+                  <h4 className="text-[18px] font-bold text-primary leading-tight">5-Star Rated Clinic</h4>
+                  <p className="text-[14px] text-text m-0 leading-normal">Compassionate clinical care and advanced diagnostics for women</p>
                 </div>
               </div>
 

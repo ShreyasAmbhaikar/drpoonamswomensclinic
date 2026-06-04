@@ -4,8 +4,8 @@ import PageHeader from "@/components/landing/PageHeader";
 import { CheckCircle } from "lucide-react";
 
 export const metadata = {
-  title: "About Us | Dr Poonam's Women's Clinic",
-  description: "Learn more about Dr Poonam's Women's Clinic in Keshav Nagar, Pune. Meet senior consultant Obstetrician-Gynecologist Dr. Poonam (MBBS, DGO, PGDMCH) and explore our patient-first approach.",
+  title: "About Dr. Poonam's Women's Clinic | Gynecologist in Keshav Nagar & Mundhwa",
+  description: "Meet Dr. Poonam (MBBS, DGO, PGDMCH), Senior Consultant Obstetrician & Gynecologist with 15+ years of experience at Dr. Poonam's Women's Clinic. Providing trusted, clinical excellence in Keshav Nagar & Mundhwa, Pune.",
   alternates: {
     canonical: "/about-us/",
   },
@@ -80,10 +80,10 @@ export default function AboutUsPage() {
                 </h2>
                 <div className="text-text space-y-4 mb-8">
                   <p>
-                    At Dr Poonam's Women's Clinic, we believe that comprehensive healthcare is one of life’s most profound needs. Founded as a center of clinical excellence in Keshav Nagar, Pune, we bring together expert obstetric and gynecological care under one roof.
+                    At <strong>Dr. Poonam's Women's Clinic</strong>, we believe every woman deserves access to safe, empathetic, and premium healthcare. Located in <strong>Keshav Nagar</strong> and serving the wider <strong>Mundhwa</strong> area in Pune, our facility provides state-of-the-art diagnostic screening and treatment options tailored to support you through every stage of life. Our practice is built on a foundation of clinical safety, absolute patient confidentiality, and transparent pricing.
                   </p>
                   <p>
-                    Whether you are starting with basic prenatal checks, looking for specialized management of PCOD/PCOS, seeking support for infertility/IUI, or needing advanced laparoscopic procedures, our team walks hand-in-hand with you. We keep our process simple, supportive, and centered entirely around you.
+                    Our clinical director, <strong>Dr. Poonam</strong>, is a board-certified <strong>Senior Consultant Obstetrician & Gynecologist</strong> with <strong>over 15 years of dedicated practice</strong>. Bringing extensive experience in managing high-risk pregnancies, normal deliveries, and reproductive concerns, she works alongside a caring team to deliver patient-centered care. From PCOS therapies and pre-conceptional planning to advanced laparoscopic procedures, we are here to guide your health journey with absolute peace of mind.
                   </p>
                 </div>
                 
@@ -91,7 +91,7 @@ export default function AboutUsPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-accent shrink-0" />
-                    <span className="font-semibold text-primary">+10 Years of Experience</span>
+                    <span className="font-semibold text-primary">+15 Years of Experience</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-accent shrink-0" />
@@ -110,19 +110,12 @@ export default function AboutUsPage() {
 
               {/* Right Image */}
               <div className="relative">
-                <div className="rounded-[30px] overflow-hidden shadow-xl aspect-[4/3] relative">
-                  <Image
-                    src="/images/about-clinic-exterior.webp"
-                    alt="Dr Poonam's Women's Clinic Exterior"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                {/* Floating badge */}
-                <div className="absolute -bottom-6 -left-6 bg-white text-primary p-6 rounded-[20px] shadow-xl border border-divider/10 hidden md:block max-w-[210px] animate-fade-in-up">
-                  <h5 className="text-[36px] font-extrabold text-[#e87c7c] leading-none mb-2">+10</h5>
-                  <p className="text-[13px] leading-snug text-text font-bold uppercase tracking-wider">Years of Trusted Women's Healthcare</p>
-                </div>
+                <img
+                  src="/images/doctor-consultation-desk.webp"
+                  alt="Dr. Poonam at her consultation desk inside Dr. Poonam's Women's Clinic"
+                  className="w-full h-auto rounded-[30px] shadow-xl"
+                  loading="lazy"
+                />
               </div>
 
             </div>
@@ -138,7 +131,7 @@ export default function AboutUsPage() {
               <div className="lg:col-span-5 flex justify-center">
                 <div className="relative w-full max-w-[400px] aspect-[4/5] rounded-[30px] overflow-hidden shadow-lg border-4 border-white">
                   <Image
-                    src="/images/about-doctor-priya.webp"
+                    src="/images/about-doctor-poonam.webp"
                     alt="Dr. Poonam"
                     fill
                     className="object-cover"
@@ -170,7 +163,7 @@ export default function AboutUsPage() {
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0"></span>
-                      <span><strong>Over 10 Years</strong> of specialized clinical practice in Obstetric and Gynecological Care</span>
+                      <span><strong>Over 15 Years</strong> of specialized clinical practice in Obstetric and Gynecological Care</span>
                     </li>
                   </ul>
                 </div>

@@ -23,7 +23,7 @@ export default function CardStack({ items }: { items: any[] }) {
   };
 
   return (
-    <div className="relative h-[340px] md:h-[300px] w-full max-w-2xl mx-auto select-none" onClick={handleCardClick}>
+    <div className="relative h-[380px] sm:h-[340px] md:h-[300px] w-full max-w-2xl mx-auto select-none" onClick={handleCardClick}>
       {cards.map((card, index) => {
         const isTop = index === 0;
         const isAnimating = animatingOut === card.id;
@@ -82,11 +82,11 @@ export default function CardStack({ items }: { items: any[] }) {
             <div className="absolute inset-0 rounded-[32px] shadow-[0_25px_60px_rgba(0,0,0,0.12)] pointer-events-none"></div>
 
             {/* Content */}
-            <div className="relative z-10 h-full p-8 md:p-10 flex flex-col justify-center">
-              <div className="flex gap-6 items-center">
+            <div className="relative z-10 h-full p-6 pt-16 md:p-10 flex flex-col justify-center">
+              <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center text-center md:text-left">
                 {/* Icon container with frosted glass */}
                 <div 
-                  className="shrink-0 w-[72px] h-[72px] rounded-[22px] flex items-center justify-center shadow-lg border border-white/50"
+                  className="shrink-0 w-[64px] h-[64px] md:w-[72px] md:h-[72px] rounded-[20px] md:rounded-[22px] flex items-center justify-center shadow-lg border border-white/50"
                   style={{ 
                     background: card.iconBg || 'rgba(255,255,255,0.35)',
                     backdropFilter: 'blur(12px)',
@@ -94,15 +94,15 @@ export default function CardStack({ items }: { items: any[] }) {
                 >
                   {card.icon}
                 </div>
-                <div>
+                <div className="flex flex-col items-center md:items-start">
                   <h3 
-                    className="text-[24px] md:text-[28px] font-bold mb-3 tracking-tight"
+                    className="text-[20px] sm:text-[22px] md:text-[28px] font-bold mb-2 md:mb-3 tracking-tight"
                     style={{ color: card.titleColor || '#1a1a2e' }}
                   >
                     {card.title}
                   </h3>
                   <p 
-                    className="text-[15px] md:text-[16px] leading-relaxed font-medium"
+                    className="text-[14px] md:text-[16px] leading-relaxed font-medium"
                     style={{ color: card.textColor || 'rgba(30,30,50,0.75)' }}
                   >
                     {card.description}
@@ -112,7 +112,7 @@ export default function CardStack({ items }: { items: any[] }) {
               
               {isTop && (
                 <div 
-                  className="absolute top-6 right-8 text-[13px] font-bold tracking-wider uppercase animate-bounce flex items-center gap-2 px-4 py-2 rounded-full border"
+                  className="absolute top-4 right-4 md:top-6 md:right-8 text-[11px] md:text-[13px] font-bold tracking-wider uppercase animate-bounce flex items-center gap-1.5 md:gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full border"
                   style={{ 
                     color: card.titleColor || '#1a1a2e',
                     background: 'rgba(255,255,255,0.35)',
@@ -121,7 +121,7 @@ export default function CardStack({ items }: { items: any[] }) {
                   }}
                 >
                   <span>Next</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  <svg className="w-3.5 h-3.5 md:w-4 md:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </div>
               )}
             </div>

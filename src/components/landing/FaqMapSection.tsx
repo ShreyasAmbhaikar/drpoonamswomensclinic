@@ -7,24 +7,24 @@ import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
 export const FaqMapSection = () => {
   const faqItems = [
     {
-      question: "What services are offered at Dr Poonam's Women's Clinic?",
-      answer: "We provide comprehensive obstetric and gynecological care, including normal delivery, Caesarean section (LSCS), infertility evaluation, IUI/IVF support, PCOD/PCOS management, laparoscopic procedures, and cervical cancer screening & vaccination."
+      question: "Who is the best gynecologist in Keshav Nagar & Mundhwa for pregnancy care?",
+      answer: "Dr. Poonam, director of Dr. Poonam's Women's Clinic, is widely trusted for prenatal care. As a Senior Consultant with over 15 years of clinical experience, she specializes in high-safety maternity monitoring, normal deliveries, and high-risk pregnancy care."
     },
     {
-      question: "When should I consult a gynecologist during pregnancy?",
-      answer: "We recommend scheduling your first prenatal visit as soon as you confirm your pregnancy. Early care is essential to establish health parameters, schedule ultrasound scans, and receive nutritional guidance."
+      question: "What treatments are offered at Dr. Poonam's Women's Clinic?",
+      answer: "We provide comprehensive women's healthcare, including normal delivery, Caesarean section (LSCS), PCOS/PCOD management, infertility diagnostics & IUI guidance, cervical cancer screening & HPV vaccination, and minimally invasive laparoscopic procedures."
     },
     {
-      question: "What is PCOD and how is it managed?",
-      answer: "PCOD (Polycystic Ovarian Disease) is a common hormonal imbalance. We treat it holistically using personalized diet and lifestyle advice, weight management, and medical therapies to regulate cycles and improve fertility."
+      question: "How is PCOS/PCOD diagnosed and treated at your clinic?",
+      answer: "We use a patient-centered clinical approach. After proper diagnostic checks (ultrasound & hormone panels), we manage PCOS/PCOD holistically using evidence-based medical treatments combined with personalized lifestyle and nutritional modifications."
     },
     {
-      question: "What is a scarless hysterectomy (NDVH)?",
-      answer: "Non-Descent Vaginal Hysterectomy (NDVH) is a minimally invasive surgery where the uterus is removed through the vaginal canal. Because there are no abdominal cuts, patients experience less pain, rapid healing, and no scars."
+      question: "Is it possible to have a normal delivery after a previous C-section?",
+      answer: "Vaginal Birth After Caesarean (VBAC) is indeed possible for many women. This depends on factors like the type of previous uterine scar and baby's positioning, which we evaluate closely under strict safety guidelines."
     },
     {
-      question: "Do you offer cervical cancer vaccination?",
-      answer: "Yes, we offer HPV vaccination (cervical cancer prevention vaccine) for girls and women, along with routine Pap smear screening to ensure early detection and comprehensive preventative wellness."
+      question: "Do you offer preventative screening like Pap smears and HPV vaccines?",
+      answer: "Yes, preventative care is a priority. We offer HPV vaccinations for cervical cancer prevention, along with regular Pap smear diagnostics and general gynecological screenings to ensure long-term reproductive wellness."
     }
   ];
 

@@ -1,4 +1,5 @@
 import React, { Suspense } from "react";
+import { notFound } from "next/navigation";
 import PageHeader from "@/components/landing/PageHeader";
 import BlogListSection from "@/components/landing/BlogListSection";
 
@@ -11,6 +12,9 @@ export const metadata = {
 };
 
 export default function BlogListPage() {
+  notFound();
+
+  /*
   const breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "Blog Insights" },
@@ -30,5 +34,6 @@ export default function BlogListPage() {
       </main>
     </>
   );
+  */
 }
 

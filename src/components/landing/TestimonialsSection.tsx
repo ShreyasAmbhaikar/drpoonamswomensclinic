@@ -87,7 +87,7 @@ export const TestimonialsSection = () => {
           </div>
 
           {/* Right Column: Button */}
-          <div>
+          {/* <div>
             <Link 
               href="/testimonials" 
               className="inline-flex items-center gap-2 bg-accent-secondary text-primary font-bold text-[15px] px-[28px] py-[14px] rounded-[10px] hover:bg-[#F8E6D8] transition-all duration-300 group"
@@ -107,7 +107,7 @@ export const TestimonialsSection = () => {
                 <polyline points="7 7 17 7 17 17"></polyline>
               </svg>
             </Link>
-          </div>
+          </div> */}
         </div>
 
         {/* Swiper Slider */}

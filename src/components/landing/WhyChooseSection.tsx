@@ -35,12 +35,12 @@ export const WhyChooseSection = () => {
             
             {/* Heading */}
             <h2 className="text-[32px] md:text-[46px] font-bold text-primary leading-[1.2] tracking-tight -mt-1">
-              Choosing Dr Poonam's Clinic means choosing trust and expertise
+              Choosing Dr. Poonam's Women's Clinic means choosing trust and expertise
             </h2>
             
             {/* Description */}
             <p className="text-[16px] text-text leading-[1.65em] mb-4">
-              At Dr Poonam's Women's Clinic, we don't just provide medical treatments – we deliver personalized, compassionate care that puts your health first.
+              At Dr. Poonam's Women's Clinic, we do not just provide standard medical treatments – we deliver evidence-based, compassionate care based on clinical safety protocols that put your health first.
             </p>
 
             {/* Checklist items */}
@@ -50,7 +50,7 @@ export const WhyChooseSection = () => {
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                 </svg>
                 <span className="text-[15px] md:text-[16px] text-text font-medium leading-relaxed">
-                  Led by a senior consultant Obstetrician-Gynecologist with +10 years of hands-on experience.
+                  Led by Dr. Poonam, a board-certified obstetrician-gynecologist with 15+ years of clinical excellence serving Keshav Nagar & Mundhwa.
                 </span>
               </div>
               <div className="flex items-start gap-3">
@@ -113,7 +113,7 @@ export const WhyChooseSection = () => {
                   Obstetric & Gynaecology Expert
                 </h4>
                 <p className="text-[14px] text-text leading-relaxed">
-                  Led by Dr. Poonam with MBBS, DGO, and PGDMCH qualifications.
+                  Led by Senior Consultant Dr. Poonam (MBBS, DGO, PGDMCH) with 15+ years of specialized clinical experience.
                 </p>
               </div>
             </div>

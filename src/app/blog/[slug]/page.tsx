@@ -52,6 +52,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const isBlogEnabled = false;
+  if (!isBlogEnabled) {
+    notFound();
+  }
+
   const { slug } = await params;
   const post = BLOG_POSTS.find((p) => p.slug === slug);
   

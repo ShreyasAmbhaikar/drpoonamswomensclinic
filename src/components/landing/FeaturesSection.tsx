@@ -62,7 +62,7 @@ export const FeaturesSection = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10 2v7.31"></path><path d="M14 9.3V1.99"></path><path d="M8.5 2h7"></path><path d="M14 9.3a6.5 6.5 0 1 1-4 0"></path><path d="M5.52 16h12.96"></path></svg>
               </div>
               <div>
-                <h4 className="text-[20px] font-bold text-primary mb-2">15+ In-House Diagnostic Lab</h4>
+                <h4 className="text-[20px] font-bold text-primary mb-2">10+ In-House Diagnostic Lab</h4>
                 <p className="text-[16px] text-text m-0 leading-[1.6em]">
                   We know that every path to parenthood is unique, and so is our approach.
                 </p>

@@ -3,8 +3,8 @@ import PageHeader from "@/components/landing/PageHeader";
 import { Clock, MapPin, Phone, Mail } from "lucide-react";
 
 export const metadata = {
-  title: "Contact Us | Dr Poonam's Women's Clinic",
-  description: "Get in touch with Dr Poonam's Women's Clinic in Keshav Nagar, Pune. Reach out for expert pregnancy care, delivery consultations, PCOD support, and fertility care.",
+  title: "Contact Us | Dr. Poonam's Women's Clinic",
+  description: "Get in touch with Dr. Poonam's Women's Clinic in Keshav Nagar, Pune. Reach out for expert pregnancy care, delivery consultations, PCOD support, and fertility care.",
   alternates: {
     canonical: "/contact-us/",
   },
@@ -54,9 +54,14 @@ export default function ContactUsPage() {
                 </div>
                 <h3 className="text-[24px] font-bold text-white mb-2">Our Locations</h3>
                 <p className="text-white/80 mb-6 text-[15px]">Providing expert gynecologist care locally.</p>
-                <p className="text-white font-semibold leading-[1.6] mt-auto">
+                <a 
+                  href="https://www.google.com/maps/place/Dr+Poonam's+Women's+Clinic+%7C+Gynecologist/data=!4m2!3m1!1s0x0:0xd39aed6b8c64a153?sa=X&ved=1t:2428&hl=en&ictx=111"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-white/80 transition-colors duration-300 font-semibold leading-[1.6] mt-auto block"
+                >
                   Shop No 33, Shopping Complex, Mantra Mesmer Rd, Keshav Nagar, Mundhwa, Pune, Maharashtra 411036
-                </p>
+                </a>
               </div>
 
               {/* Contact Us */}
@@ -73,6 +78,13 @@ export default function ContactUsPage() {
                   >
                     <Phone className="w-4 h-4 text-white" />
                     <span>097119 29529</span>
+                  </a>
+                  <a 
+                    href="tel:+918149661830" 
+                    className="flex items-center gap-3 text-white font-bold hover:text-white/80 transition-colors duration-300"
+                  >
+                    <Phone className="w-4 h-4 text-white" />
+                    <span>+91 81496 61830</span>
                   </a>
                 </div>
               </div>

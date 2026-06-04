@@ -23,8 +23,8 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: "LSCS (Caesarean Section) Specialist in Keshav Nagar | Dr. Poonam",
-  description: "Expert Caesarean section (LSCS) care, high-risk pregnancy management, and safe delivery planning by the leading maternity specialist in Keshav Nagar and Mundhwa, Pune.",
+  title: "LSCS (Caesarean Section) Specialist in Keshav Nagar & Mundhwa | Dr. Poonam's Women's Clinic",
+  description: "Expert Caesarean section (LSCS) care, high-risk pregnancy management, and safe sterile delivery planning by Dr. Poonam's Women's Clinic in Keshav Nagar & Mundhwa, Pune.",
   alternates: {
     canonical: '/lscs-caesarean-section-in-keshav-nagar/',
   }
@@ -385,7 +385,7 @@ export default function LscsCaesareanPage() {
                     <CheckCircle className="w-5 h-5 text-accent mt-1 shrink-0" />
                     <div>
                       <strong className="block text-[16px] text-white">Extensive Obstetric Expertise</strong>
-                      <span className="text-white/80 text-[14px]">With over 10+ years of experience, we specialize in managing safe Caesarean deliveries, high-risk pregnancies, and VBAC cases across Keshav Nagar and Mundhwa, Pune.</span>
+                      <span className="text-white/80 text-[14px]">With over 15+ years of experience, we specialize in managing safe Caesarean deliveries, high-risk pregnancies, and VBAC cases across Keshav Nagar and Mundhwa, Pune.</span>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">

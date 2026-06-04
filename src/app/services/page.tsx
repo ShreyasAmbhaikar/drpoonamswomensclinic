@@ -20,8 +20,8 @@ import {
 import Link from "next/link";
 
 export const metadata = {
-  title: "Obstetrics & Gynecologist Services in Keshav Nagar | Dr Poonam's Women's Clinic",
-  description: "Comprehensive women's healthcare services at Dr Poonam's Women's Clinic in Keshav Nagar, Pune. Normal delivery, LSCS, PCOD care, IUI, and laparoscopic surgeries.",
+  title: "Obstetrics & Gynecology Services in Keshav Nagar & Mundhwa | Dr. Poonam's Women's Clinic",
+  description: "Explore expert women's healthcare services at Dr. Poonam's Women's Clinic in Keshav Nagar & Mundhwa, Pune. Led by Dr. Poonam (15+ yrs exp; MBBS, DGO, PGDMCH), offering normal delivery, PCOD/PCOS care, high-risk pregnancy management, & IUI/IVF support.",
   alternates: {
     canonical: "/services/",
   },
@@ -37,21 +37,21 @@ export default function ServicesPage() {
     {
       icon: <Baby className="w-10 h-10 text-accent" />,
       title: "Normal Delivery",
-      desc: "Comprehensive prenatal care, continuous labor monitoring, and natural child birth support focusing on maternal safety.",
+      desc: "Compassionate prenatal support and safe normal delivery clinical practices near Keshav Nagar and Mundhwa, prioritizing natural childbirth with continuous labor monitoring and evidence-based protocols.",
       href: "/normal-delivery-in-keshav-nagar/",
       isActive: true,
     },
     {
       icon: <Scissors className="w-10 h-10 text-accent" />,
       title: "LSCS (Caesarean Section)",
-      desc: "Safe and highly professional surgical delivery options performed when medically indicated for mother or child.",
+      desc: "Certified gynecological expertise in performing sterile and safe C-section surgeries (LSCS) for high-risk pregnancies, adhering to the highest hygiene standards and obstetric safety guidelines.",
       href: "/lscs-caesarean-section-in-keshav-nagar/",
       isActive: true,
     },
     {
       icon: <Sparkles className="w-10 h-10 text-accent" />,
       title: "Infertility, IUI & IVF Care",
-      desc: "Advanced fertility testing, follicle tracking, and Intrauterine Insemination (IUI) to assist couples on their parenthood path.",
+      desc: "Ethical, success-focused infertility diagnostics, advanced follicle tracking, and customized IUI/IVF guidance to support couples on their parenthood path near Mundhwa and Keshav Nagar.",
       href: "/infertility-iui-ivf-in-keshav-nagar/",
       isActive: true,
     },
@@ -65,7 +65,7 @@ export default function ServicesPage() {
     {
       icon: <Heart className="w-10 h-10 text-accent" />,
       title: "PCOD / PCOS Care",
-      desc: "Holistic, lifestyle-integrated medical management for ovulation issues, hormonal imbalances, and metabolic health.",
+      desc: "Patient-centered clinical care and customized medical management for ovulation issues, hormonal imbalances, and metabolic health, providing trusted PCOD/PCOS treatments in Keshav Nagar.",
       href: "/pcod-pcos-care-in-keshav-nagar/",
       isActive: true,
     },

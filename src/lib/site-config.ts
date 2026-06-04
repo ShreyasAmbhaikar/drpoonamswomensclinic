@@ -1,7 +1,7 @@
 export const siteConfig = {
-  name: "Dr Poonam's Women's Clinic",
-  shortName: "Dr Poonam's Clinic",
-  description: "Dr Poonam's Women's Clinic is a leading gynecologist clinic in Keshav Nagar, Pune. Led by Dr. Poonam (MBBS, DGO, PGDMCH), senior obstetrician-gynecologist, offering expert care in normal delivery, infertility, IUI, PCOD, and laparoscopic procedures.",
+  name: "Dr. Poonam's Women's Clinic",
+  shortName: "Dr. Poonam's Clinic",
+  description: "Dr. Poonam's Women's Clinic is a leading gynecologist clinic in Keshav Nagar, Pune. Led by Dr. Poonam (MBBS, DGO, PGDMCH), senior obstetrician-gynecologist, offering expert care in normal delivery, infertility, IUI, PCOD, and laparoscopic procedures.",
   url: "https://yourdomain.com", // update to client domain when active
   logo: "/images/logo-women-health.svg",
   footerLogo: "/images/footer-logo.svg",
@@ -10,7 +10,7 @@ export const siteConfig = {
     name: "Dr. Poonam",
     qualifications: "MBBS, DGO, PGDMCH",
     role: "Senior Consultant Obstetrician & Gynecologist",
-    experience: "+10 Years"
+    experience: "+15 Years"
   },
 
   // NAP (Name, Address, Phone) details

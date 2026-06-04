@@ -284,13 +284,136 @@ export default function InfertilityIuiIvfPage() {
             <p className="text-text mb-[40px] text-[15px] leading-relaxed text-center max-w-[700px] mx-auto">
               Many couples are unsure whether they need IUI or IVF. Understanding the key differences helps you plan your fertility journey with confidence.
             </p>
-            <div className="rounded-[24px] overflow-hidden shadow-lg border border-black/[0.04] bg-white p-2 md:p-4 transition-all duration-500 hover:shadow-xl relative aspect-[3/2] w-full max-w-[840px] mx-auto">
-              <Image 
-                src="/images/iui-vs-ivf-chart.webp" 
-                alt="IUI vs IVF Feature Comparison Infographic Chart" 
-                fill
-                className="object-contain p-2"
-              />
+            {/* Custom Comparison layout styled exactly like PCOD vs PCOS comparison */}
+            <div className="flex flex-col lg:flex-row items-stretch justify-center gap-8 lg:gap-12 relative max-w-[1024px] mx-auto">
+              {/* Vertical dotted line with VS circle in the middle (Desktop Only) */}
+              <div className="hidden lg:block absolute left-1/2 top-[120px] bottom-[40px] -translate-x-1/2 w-0 border-r-2 border-dashed border-[#E2E8F0] z-0">
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border border-[#E2E8F0] flex items-center justify-center font-bold text-[#C0354A] shadow-sm z-10">
+                  VS
+                </div>
+              </div>
+
+              {/* Left Card: IUI */}
+              <div className="w-full lg:w-[46%] bg-white rounded-[28px] border border-black/[0.04] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.02)] z-10 relative hover:shadow-md transition-all duration-300">
+                <div className="bg-[#FFF0EB] text-[#C0354A] p-5 rounded-[20px] text-center mb-6">
+                  <h4 className="text-[18px] md:text-[20px] font-bold mb-1">Intrauterine Insemination (IUI)</h4>
+                  <p className="text-[13px] text-[#E8475F] font-semibold uppercase tracking-wider">Simpler. Natural. Effective.</p>
+                </div>
+                
+                <div className="space-y-1">
+                  {/* Row 1 */}
+                  <div className="flex items-start gap-4 py-4 border-b border-[#F7FAFC]">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-[#FFF0EB] text-[#C0354A]">
+                      <Activity className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-primary text-[15px] mb-1 block">Procedure</span>
+                      <p className="text-text text-[14px] leading-relaxed">Washed sperm is placed directly into the uterus.</p>
+                    </div>
+                  </div>
+                  {/* Row 2 */}
+                  <div className="flex items-start gap-4 py-4 border-b border-[#F7FAFC]">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-[#FFF0EB] text-[#C0354A]">
+                      <Heart className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-primary text-[15px] mb-1 block">Invasiveness</span>
+                      <p className="text-text text-[14px] leading-relaxed">Low; feels similar to a routine Pap smear.</p>
+                    </div>
+                  </div>
+                  {/* Row 3 */}
+                  <div className="flex items-start gap-4 py-4 border-b border-[#F7FAFC]">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-[#FFF0EB] text-[#C0354A]">
+                      <Sparkles className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-primary text-[15px] mb-1 block">Fertilization</span>
+                      <p className="text-text text-[14px] leading-relaxed">Occurs naturally inside the fallopian tubes.</p>
+                    </div>
+                  </div>
+                  {/* Row 4 */}
+                  <div className="flex items-start gap-4 py-4 border-b border-[#F7FAFC]">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-[#FFF0EB] text-[#C0354A]">
+                      <Clock className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-primary text-[15px] mb-1 block">Cost & Time</span>
+                      <p className="text-text text-[14px] leading-relaxed">Lower cost, shorter cycle duration.</p>
+                    </div>
+                  </div>
+                  {/* Row 5 */}
+                  <div className="flex items-start gap-4 py-4">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-[#FFF0EB] text-[#C0354A]">
+                      <Smile className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-primary text-[15px] mb-1 block">Best For</span>
+                      <p className="text-text text-[14px] leading-relaxed">Mild male factor, unexplained infertility.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Card: IVF */}
+              <div className="w-full lg:w-[46%] bg-white rounded-[28px] border border-black/[0.04] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.02)] z-10 relative hover:shadow-md transition-all duration-300">
+                <div className="bg-[#EEF4FF] text-[#1A365D] p-5 rounded-[20px] text-center mb-6">
+                  <h4 className="text-[18px] md:text-[20px] font-bold mb-1">In Vitro Fertilization (IVF)</h4>
+                  <p className="text-[13px] text-[#2B4A7A] font-semibold uppercase tracking-wider">Advanced. Precise. Powerful.</p>
+                </div>
+
+                <div className="space-y-1">
+                  {/* Row 1 */}
+                  <div className="flex items-start gap-4 py-4 border-b border-[#F7FAFC]">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-[#EEF4FF] text-[#1A365D]">
+                      <Activity className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-primary text-[15px] mb-1 block">Procedure</span>
+                      <p className="text-text text-[14px] leading-relaxed">Eggs are retrieved and fertilized in a lab, then transferred.</p>
+                    </div>
+                  </div>
+                  {/* Row 2 */}
+                  <div className="flex items-start gap-4 py-4 border-b border-[#F7FAFC]">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-[#EEF4FF] text-[#1A365D]">
+                      <Shield className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-primary text-[15px] mb-1 block">Invasiveness</span>
+                      <p className="text-text text-[14px] leading-relaxed">Moderate; requires light sedation for egg retrieval.</p>
+                    </div>
+                  </div>
+                  {/* Row 3 */}
+                  <div className="flex items-start gap-4 py-4 border-b border-[#F7FAFC]">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-[#EEF4FF] text-[#1A365D]">
+                      <Sparkles className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-primary text-[15px] mb-1 block">Fertilization</span>
+                      <p className="text-text text-[14px] leading-relaxed">Occurs externally in a highly controlled laboratory.</p>
+                    </div>
+                  </div>
+                  {/* Row 4 */}
+                  <div className="flex items-start gap-4 py-4 border-b border-[#F7FAFC]">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-[#EEF4FF] text-[#1A365D]">
+                      <Calendar className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-primary text-[15px] mb-1 block">Cost & Time</span>
+                      <p className="text-text text-[14px] leading-relaxed">Higher investment, requires 4-6 weeks per cycle.</p>
+                    </div>
+                  </div>
+                  {/* Row 5 */}
+                  <div className="flex items-start gap-4 py-4">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-[#EEF4FF] text-[#1A365D]">
+                      <Smile className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-primary text-[15px] mb-1 block">Best For</span>
+                      <p className="text-text text-[14px] leading-relaxed">Blocked tubes, severe male factor, advanced age.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

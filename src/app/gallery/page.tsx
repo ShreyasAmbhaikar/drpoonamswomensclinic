@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import PageHeader from "@/components/landing/PageHeader";
 import { Maximize2, X, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -9,15 +8,13 @@ interface GalleryImage {
   id: number;
   src: string;
   alt: string;
-  category: "reception" | "consultation" | "treatment" | "patient-care";
   categoryLabel: string;
   title: string;
-  spanClass: string;
 }
 
 export default function GalleryPage() {
-  const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
+  const [isZoomed, setIsZoomed] = useState(false);
 
   const breadcrumbs = [
     { label: "Home", href: "/best-gynecologist-in-keshav-nagar/" },
@@ -26,78 +23,87 @@ export default function GalleryPage() {
 
   const galleryImages: GalleryImage[] = [
     {
+      id: 9,
+      src: "/images/clinic-charts.webp",
+      alt: "Pregnancy Food Guide and Pelvic Floor Exercises wall charts at Dr. Poonam's Women's Clinic",
+      categoryLabel: "Patient Education",
+      title: "Pregnancy Care & Exercises Chart",
+    },
+    {
+      id: 10,
+      src: "/images/doctor-desk-portrait.webp",
+      alt: "Dr. Poonam in her consultation room at Dr. Poonam's Women's Clinic",
+      categoryLabel: "Consulting Suite",
+      title: "Dr. Poonam's Consulting Office",
+    },
+    {
+      id: 11,
+      src: "/images/doctor-consultation-portrait-v2.webp",
+      alt: "Dr. Poonam consultation desk and patient care at Dr. Poonam's Women's Clinic",
+      categoryLabel: "Consulting Suite",
+      title: "Dr. Poonam's Consultation Desk",
+    },
+    {
       id: 1,
-      src: "/images/gallery-reception.png",
-      alt: "Clinic Reception Desk and Waiting Lounge",
-      category: "reception",
-      categoryLabel: "Reception & Lounge",
-      title: "Clinic Reception Lounge",
-      spanClass: "md:col-span-2 md:row-span-2",
+      src: "/images/clinic-exterior.webp",
+      alt: "Dr. Poonam's Women's Clinic Storefront and Entrance in Keshav Nagar",
+      categoryLabel: "Clinic Exterior",
+      title: "Clinic Storefront & Signage",
     },
     {
       id: 2,
-      src: "/images/gallery-consultation.png",
-      alt: "Doctor Consultation Room and Counseling Area",
-      category: "consultation",
+      src: "/images/doctor-consultation-desk.webp",
+      alt: "Dr. Poonam at her consultation desk inside the consulting suite",
       categoryLabel: "Consulting Suite",
       title: "Dr. Poonam's Consultation Room",
-      spanClass: "md:col-span-1 md:row-span-1",
     },
     {
       id: 3,
-      src: "/images/gallery-treatment.png",
-      alt: "Ultrasound scan and advanced clinical diagnosis equipment",
-      category: "treatment",
-      categoryLabel: "Diagnostic & Treatment",
-      title: "Ultrasound & Diagnostics Suite",
-      spanClass: "md:col-span-1 md:row-span-2",
+      src: "/images/clinic-waiting-hall.webp",
+      alt: "Patient waiting area and corridor inside Dr. Poonam's Women's Clinic",
+      categoryLabel: "Waiting Lounge",
+      title: "Clinic Waiting Corridor",
     },
     {
-      id: 4,
-      src: "/images/gallery-recovery.png",
-      alt: "Comfortable recovery ward for patients post minor surgeries",
-      category: "patient-care",
-      categoryLabel: "Patient Care",
-      title: "Patient Recovery Room",
-      spanClass: "md:col-span-2 md:row-span-1",
+      id: 12,
+      src: "/images/doctor-staff-portrait.webp",
+      alt: "Dr. Poonam with clinic Patient in the consultation room at Dr. Poonam's Women's Clinic",
+      categoryLabel: "Consulting Suite",
+      title: "Dr. Poonam with Patient",
     },
     {
-      id: 5,
-      src: "/images/about-clinic-exterior.webp",
-      alt: "Dr Poonam's Women's Clinic Entrance and Exterior board",
-      category: "patient-care",
+      id: 13,
+      src: "/images/gallery-newborn-delivery.webp",
+      alt: "Dr. Poonam celebrating a successful newborn delivery with parents in the recovery room",
       categoryLabel: "Patient Care",
-      title: "Clinic Entrance Lobby",
-      spanClass: "md:col-span-1 md:row-span-1",
+      title: "Newborn Delivery Celebration",
+    },
+    {
+      id: 14,
+      src: "/images/gallery-operation-theater.webp",
+      alt: "Dr. Poonam with parents in the sterile operation theater/surgical room",
+      categoryLabel: "Patient Care",
+      title: "Surgical Delivery Preparation",
     },
   ];
-
-  const categories = [
-    { value: "all", label: "All Facilities" },
-    { value: "reception", label: "Reception & Lounge" },
-    { value: "consultation", label: "Consultation Suites" },
-    { value: "treatment", label: "Diagnostics & Labs" },
-    { value: "patient-care", label: "Patient Wards & Entrance" },
-  ];
-
-  const filteredImages = selectedCategory === "all"
-    ? galleryImages
-    : galleryImages.filter((img) => img.category === selectedCategory);
 
   const openLightbox = (index: number) => {
     setActiveImageIndex(index);
+    setIsZoomed(false);
   };
 
   const closeLightbox = () => {
     setActiveImageIndex(null);
+    setIsZoomed(false);
   };
 
   const handlePrev = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (activeImageIndex !== null) {
       setActiveImageIndex(
-        activeImageIndex === 0 ? filteredImages.length - 1 : activeImageIndex - 1
+        activeImageIndex === 0 ? galleryImages.length - 1 : activeImageIndex - 1
       );
+      setIsZoomed(false);
     }
   };
 
@@ -105,8 +111,9 @@ export default function GalleryPage() {
     e.stopPropagation();
     if (activeImageIndex !== null) {
       setActiveImageIndex(
-        activeImageIndex === filteredImages.length - 1 ? 0 : activeImageIndex + 1
+        activeImageIndex === galleryImages.length - 1 ? 0 : activeImageIndex + 1
       );
+      setIsZoomed(false);
     }
   };
 
@@ -123,59 +130,36 @@ export default function GalleryPage() {
                 Take a Tour
               </span>
               <h2 className="text-[32px] md:text-[42px] font-bold text-primary leading-tight">
-                Step Inside Dr Poonam's Women's Clinic
+                Step Inside Dr. Poonam's Women's Clinic
               </h2>
               <p className="text-text text-[16px] leading-relaxed">
                 Explore our state-of-the-art facilities in Keshav Nagar, Pune. We maintain a warm, welcoming, and sterile clinical environment equipped with premium diagnostic and patient care systems to make your visit safe and stress-free.
               </p>
             </div>
 
-            {/* Category Filter Tabs */}
-            <div className="flex flex-wrap justify-center gap-3 mb-[50px]">
-              {categories.map((cat) => (
-                <button
-                  key={cat.value}
-                  onClick={() => setSelectedCategory(cat.value)}
-                  className={`px-6 py-2.5 rounded-full font-bold text-[14px] transition-all duration-300 ${
-                    selectedCategory === cat.value
-                      ? "bg-accent text-white shadow-md shadow-accent/20"
-                      : "bg-[#FAF6F3] text-primary border border-divider/5 hover:bg-secondary hover:text-accent"
-                  }`}
-                >
-                  {cat.label}
-                </button>
-              ))}
-            </div>
-
-            {/* Holy Grail CSS Grid Gallery */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[280px]">
-              {filteredImages.map((image, idx) => (
+            {/* Masonry CSS Column Gallery */}
+            <div className="columns-1 md:columns-2 lg:columns-3 gap-6 [column-fill:_balance] box-border">
+              {galleryImages.map((image, idx) => (
                 <div
                   key={image.id}
                   onClick={() => openLightbox(idx)}
-                  className={`group relative overflow-hidden rounded-[24px] border border-divider/10 shadow-sm cursor-pointer ${image.spanClass} transition-all duration-500 hover:shadow-lg`}
+                  className="break-inside-avoid mb-6 group relative overflow-hidden rounded-[24px] border border-divider/10 shadow-sm cursor-zoom-in transition-all duration-500 hover:shadow-lg"
                 >
-                  {/* Image wrapper */}
-                  <div className="absolute inset-0 z-0">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                  </div>
+                  {/* Image Element */}
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    loading="lazy"
+                  />
 
                   {/* Dark Vignette Overlay on Hover */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent opacity-60 group-hover:opacity-85 transition-opacity duration-300 z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/30 to-transparent opacity-60 group-hover:opacity-85 transition-opacity duration-300 z-10" />
 
                   {/* Absolute UI overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 flex items-end justify-between">
                     <div>
-                      <span className="inline-block bg-accent/20 backdrop-blur-sm border border-accent/20 text-accent font-bold text-[11px] px-3 py-0.5 rounded-full uppercase tracking-wider mb-2">
-                        {image.categoryLabel}
-                      </span>
-                      <h3 className="text-white font-bold text-[18px] md:text-[20px] leading-tight">
+                      <h3 className="text-white font-bold text-[18px] leading-tight">
                         {image.title}
                       </h3>
                     </div>
@@ -212,7 +196,7 @@ export default function GalleryPage() {
         {/* Lightbox Modal */}
         {activeImageIndex !== null && (
           <div
-            className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm transition-all duration-300"
+            className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm transition-all duration-300 cursor-zoom-out"
             onClick={closeLightbox}
           >
             {/* Close Button */}
@@ -234,22 +218,26 @@ export default function GalleryPage() {
             </button>
 
             {/* Current Image Container */}
-            <div className="relative max-w-[1000px] w-full max-h-[80vh] aspect-[16/10] md:aspect-[16/9] z-40">
-              <Image
-                src={filteredImages[activeImageIndex].src}
-                alt={filteredImages[activeImageIndex].alt}
-                fill
-                className="object-contain"
-                sizes="100vw"
-                priority
-              />
+            <div 
+              className="relative max-w-[95vw] max-h-[92vh] flex flex-col items-center justify-center z-40 select-none"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="overflow-auto max-w-full max-h-[78vh] md:max-h-[83vh] rounded-[12px] scrollbar-thin">
+                <img
+                  src={galleryImages[activeImageIndex].src}
+                  alt={galleryImages[activeImageIndex].alt}
+                  onClick={() => setIsZoomed(!isZoomed)}
+                  className={`object-contain shadow-2xl border border-white/10 transition-all duration-300 ${
+                    isZoomed 
+                      ? "max-w-none max-h-none w-[130vw] md:w-[110vw] cursor-zoom-out" 
+                      : "max-w-full max-h-[78vh] md:max-h-[83vh] cursor-zoom-in"
+                  }`}
+                />
+              </div>
               {/* Description strip at the bottom */}
-              <div className="absolute bottom-[-50px] left-0 right-0 text-center text-white/90">
-                <span className="text-[12px] font-bold tracking-wider text-accent uppercase block mb-1">
-                  {filteredImages[activeImageIndex].categoryLabel}
-                </span>
-                <p className="text-[16px] md:text-[18px] font-bold">
-                  {filteredImages[activeImageIndex].title}
+              <div className="mt-4 text-center text-white/90 px-4 max-w-[700px] pointer-events-none">
+                <p className="text-[15px] md:text-[18px] font-bold leading-snug">
+                  {galleryImages[activeImageIndex].title}
                 </p>
               </div>
             </div>

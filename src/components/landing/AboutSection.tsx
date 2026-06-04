@@ -26,7 +26,7 @@ export const AboutSection = () => {
 
             {/* Paragraph Description */}
             <p className="text-[16px] text-text leading-[1.65em] max-w-[620px]">
-              At Dr Poonam's Women's Clinic in Keshav Nagar, Pune, we are dedicated to providing compassionate, personalized care at every stage of a woman's life. From prenatal support and normal delivery to specialized treatments for infertility, PCOD/PCOS, and minimally invasive laparoscopic surgeries, our clinical expertise ensures your health and peace of mind are always prioritized.
+              At <strong>Dr. Poonam's Women's Clinic</strong>, we provide dedicated, evidence-based obstetric and gynecological care tailored to every stage of a woman's life. Led by <strong>Dr. Poonam</strong>, a board-certified Senior Consultant with <strong>over 15 years of clinical practice</strong>, our clinic serves as a trusted medical sanctuary for patients in <strong>Keshav Nagar, Mundhwa</strong>, and surrounding Pune neighborhoods. We combine advanced clinical safety protocols with compassionate, patient-first care, specializing in high-safety pregnancy care, normal delivery, PCOS management, and ethical fertility support.
             </p>
 
             {/* List & Trust Card Grid */}
@@ -58,7 +58,7 @@ export const AboutSection = () => {
                     </svg>
                   </div>
                   <span className="font-bold text-primary text-[15px] md:text-[16px]">
-                    Senior Obstetrician & Gynecologist
+                    Senior Consultant (MBBS, DGO, PGDMCH)
                   </span>
                 </div>
 

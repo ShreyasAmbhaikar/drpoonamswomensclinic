@@ -7,7 +7,6 @@ const QUICK_LINKS = [
   { label: "About Us", href: "/about-us" },
   { label: "Services", href: "/services" },
   { label: "Gallery", href: "/gallery/" },
-  { label: "Blogs", href: "/blog" },
   { label: "Contact Us", href: "/contact-us" },
 ];
 
@@ -56,7 +55,7 @@ export const Footer = () => {
               </div>
             </Link>
             <p className="text-white/80 text-[15px] leading-[1.6em]">
-              Dr Poonam's Women's Clinic provides expert obstetric and gynecological care in Keshav Nagar, Pune. Led by Dr. Poonam with +10 years of experience, we specialize in normal delivery, IUI/IVF care, PCOD, and laparoscopic procedures.
+              Dr Poonam's Women's Clinic provides expert obstetric and gynecological care in Keshav Nagar, Pune. Led by Dr. Poonam with +15 years of experience, we specialize in normal delivery, IUI/IVF care, PCOD, and laparoscopic procedures.
             </p>
           </div>
 
@@ -121,6 +120,12 @@ export const Footer = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 <span>Call Doctor: 097119 29529</span>
+              </a>
+              <a 
+                href="tel:+918149661830" 
+                className="flex items-start gap-3 hover:text-accent transition-colors duration-300 pl-8 -mt-2"
+              >
+                <span>Call Doctor: +91 81496 61830</span>
               </a>
               <a 
                 href="https://www.google.com/maps/place/Dr+Poonam's+Women's+Clinic+%7C+Gynecologist/data=!4m2!3m1!1s0x0:0xd39aed6b8c64a153?sa=X&ved=1t:2428&hl=en&ictx=111" 

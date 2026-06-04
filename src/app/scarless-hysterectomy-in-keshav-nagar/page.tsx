@@ -188,13 +188,136 @@ export default function ScarlessHysterectomyPage() {
             </p>
             
             {/* Infographic comparing Scarless Vaginal vs Open Abdominal Hysterectomy */}
-            <div className="rounded-[24px] overflow-hidden shadow-lg border border-black/[0.04] bg-white p-2 md:p-4 mb-8 transition-all duration-500 hover:shadow-xl relative aspect-[3/2] w-full max-h-[560px] max-w-[840px] mx-auto group">
-              <Image 
-                src="/images/scarless-comparison.webp" 
-                alt="Scarless Vaginal Hysterectomy (NDVH) vs Open Abdominal Hysterectomy Side-by-Side Comparison Infographic Chart" 
-                fill
-                className="object-contain p-2 group-hover:scale-102 transition-transform duration-500"
-              />
+            {/* Custom Comparison layout styled exactly like PCOD vs PCOS comparison */}
+            <div className="flex flex-col lg:flex-row items-stretch justify-center gap-8 lg:gap-12 relative max-w-[1024px] mx-auto">
+              {/* Vertical dotted line with VS circle in the middle (Desktop Only) */}
+              <div className="hidden lg:block absolute left-1/2 top-[120px] bottom-[40px] -translate-x-1/2 w-0 border-r-2 border-dashed border-[#E2E8F0] z-0">
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border border-[#E2E8F0] flex items-center justify-center font-bold text-[#5C35CC] shadow-sm z-10">
+                  VS
+                </div>
+              </div>
+
+              {/* Left Card: Scarless Hysterectomy */}
+              <div className="w-full lg:w-[46%] bg-white rounded-[28px] border border-black/[0.04] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.02)] z-10 relative hover:shadow-md transition-all duration-300">
+                <div className="bg-[#F6F1FF] text-[#2A1650] p-5 rounded-[20px] text-center mb-6">
+                  <h4 className="text-[18px] md:text-[20px] font-bold mb-1">Scarless (Vaginal) Hysterectomy</h4>
+                  <p className="text-[13px] text-[#4A3270] font-semibold uppercase tracking-wider">No cuts. Faster recovery. Less pain.</p>
+                </div>
+                
+                <div className="space-y-1">
+                  {/* Row 1 */}
+                  <div className="flex items-start gap-4 py-4 border-b border-[#F7FAFC]">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-[#E2D4FF] text-[#2A1650]">
+                      <CheckCircle className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-primary text-[15px] mb-1 block">Abdominal Scars</span>
+                      <p className="text-text text-[14px] leading-relaxed">Zero external abdominal cuts or scars.</p>
+                    </div>
+                  </div>
+                  {/* Row 2 */}
+                  <div className="flex items-start gap-4 py-4 border-b border-[#F7FAFC]">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-[#E2D4FF] text-[#2A1650]">
+                      <Smile className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-primary text-[15px] mb-1 block">Surgical Pain</span>
+                      <p className="text-text text-[14px] leading-relaxed">Significantly lower post-operative pain.</p>
+                    </div>
+                  </div>
+                  {/* Row 3 */}
+                  <div className="flex items-start gap-4 py-4 border-b border-[#F7FAFC]">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-[#E2D4FF] text-[#2A1650]">
+                      <Home className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-primary text-[15px] mb-1 block">Hospital Stay</span>
+                      <p className="text-text text-[14px] leading-relaxed">Short stay, usually 24 to 48 hours.</p>
+                    </div>
+                  </div>
+                  {/* Row 4 */}
+                  <div className="flex items-start gap-4 py-4 border-b border-[#F7FAFC]">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-[#E2D4FF] text-[#2A1650]">
+                      <ShieldCheck className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-primary text-[15px] mb-1 block">Infection Risk</span>
+                      <p className="text-text text-[14px] leading-relaxed">Very low risk of external site infections.</p>
+                    </div>
+                  </div>
+                  {/* Row 5 */}
+                  <div className="flex items-start gap-4 py-4">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-[#E2D4FF] text-[#2A1650]">
+                      <Clock className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-primary text-[15px] mb-1 block">Recovery to Normal</span>
+                      <p className="text-text text-[14px] leading-relaxed">Usually 2 to 3 weeks for light activities.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Card: Open Abdominal Hysterectomy */}
+              <div className="w-full lg:w-[46%] bg-white rounded-[28px] border border-black/[0.04] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.02)] z-10 relative hover:shadow-md transition-all duration-300">
+                <div className="bg-[#EEF4FF] text-[#1A365D] p-5 rounded-[20px] text-center mb-6">
+                  <h4 className="text-[18px] md:text-[20px] font-bold mb-1">Open Abdominal Hysterectomy</h4>
+                  <p className="text-[13px] text-[#2B4A7A] font-semibold uppercase tracking-wider">Traditional approach with a larger incision.</p>
+                </div>
+
+                <div className="space-y-1">
+                  {/* Row 1 */}
+                  <div className="flex items-start gap-4 py-4 border-b border-[#F7FAFC]">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-[#EEF4FF] text-[#1A365D]">
+                      <CheckCircle className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-primary text-[15px] mb-1 block">Abdominal Scars</span>
+                      <p className="text-text text-[14px] leading-relaxed">Requires a 5-7 inch abdominal incision.</p>
+                    </div>
+                  </div>
+                  {/* Row 2 */}
+                  <div className="flex items-start gap-4 py-4 border-b border-[#F7FAFC]">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-[#EEF4FF] text-[#1A365D]">
+                      <Smile className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-primary text-[15px] mb-1 block">Surgical Pain</span>
+                      <p className="text-text text-[14px] leading-relaxed">High pain level requiring strong analgesics.</p>
+                    </div>
+                  </div>
+                  {/* Row 3 */}
+                  <div className="flex items-start gap-4 py-4 border-b border-[#F7FAFC]">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-[#EEF4FF] text-[#1A365D]">
+                      <Home className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-primary text-[15px] mb-1 block">Hospital Stay</span>
+                      <p className="text-text text-[14px] leading-relaxed">Longer stay, usually 3 to 5 days.</p>
+                    </div>
+                  </div>
+                  {/* Row 4 */}
+                  <div className="flex items-start gap-4 py-4 border-b border-[#F7FAFC]">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-[#EEF4FF] text-[#1A365D]">
+                      <ShieldCheck className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-primary text-[15px] mb-1 block">Infection Risk</span>
+                      <p className="text-text text-[14px] leading-relaxed">Higher risk due to the large external wound.</p>
+                    </div>
+                  </div>
+                  {/* Row 5 */}
+                  <div className="flex items-start gap-4 py-4">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-[#EEF4FF] text-[#1A365D]">
+                      <Clock className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-primary text-[15px] mb-1 block">Recovery to Normal</span>
+                      <p className="text-text text-[14px] leading-relaxed">Usually takes 6 to 8 weeks to return to normal activities.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

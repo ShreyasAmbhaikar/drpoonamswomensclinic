@@ -61,7 +61,7 @@ export default function RootLayout({
     "telephone": "097119 29529",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Shop No 33, Shopping Complex, Mantra Mesmer Rd, Keshav Nagar, Mundhwa",
+      "streetAddress": "Shop No 33, Shopping Complex, Mantra Mesmer Rd, in front of Florida River Bank, Keshav Nagar, Mundhwa, Mundhawa",
       "addressLocality": "Pune",
       "addressRegion": "Maharashtra",
       "postalCode": "411036",

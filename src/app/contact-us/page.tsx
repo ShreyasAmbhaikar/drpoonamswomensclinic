@@ -31,7 +31,8 @@ export default function ContactUsPage() {
                 <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-6 shrink-0">
                   <Clock className="w-7 h-7" />
                 </div>
-                <h3 className="text-[24px] font-bold text-primary mb-4">Schedule Hours</h3>
+                <h3 className="text-[24px] font-bold text-primary mb-2">Schedule Hours</h3>
+                <p className="text-text mb-6 text-[15px]">Clinic timing and consultation schedule.</p>
                 <ul className="space-y-3 text-text">
                   <li className="flex justify-between border-b border-divider/20 pb-2">
                     <span className="capitalize font-semibold text-primary">Monday - Saturday</span>
@@ -58,9 +59,9 @@ export default function ContactUsPage() {
                   href="https://www.google.com/maps/place/Dr+Poonam's+Women's+Clinic+%7C+Gynecologist/data=!4m2!3m1!1s0x0:0xd39aed6b8c64a153?sa=X&ved=1t:2428&hl=en&ictx=111"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:text-white/80 transition-colors duration-300 font-semibold leading-[1.6] mt-auto block"
+                  className="text-white hover:text-white/80 transition-colors duration-300 font-semibold leading-[1.6] block"
                 >
-                  Shop No 33, Shopping Complex, Mantra Mesmer Rd, Keshav Nagar, Mundhwa, Pune, Maharashtra 411036
+                  Shop No 33, Shopping Complex, Mantra Mesmer Rd, in front of Florida River Bank, Keshav Nagar, Mundhwa, Mundhawa, Pune, Maharashtra 411036
                 </a>
               </div>
 
@@ -71,7 +72,7 @@ export default function ContactUsPage() {
                 </div>
                 <h3 className="text-[24px] font-bold text-white mb-2">Contact Us</h3>
                 <p className="text-white/80 mb-6 text-[15px]">Reach out for pregnancy and gynae support.</p>
-                <div className="space-y-3 mt-auto">
+                <div className="space-y-3">
                   <a 
                     href="tel:09711929529" 
                     className="flex items-center gap-3 text-white font-bold hover:text-white/80 transition-colors duration-300"
@@ -80,11 +81,11 @@ export default function ContactUsPage() {
                     <span>097119 29529</span>
                   </a>
                   <a 
-                    href="tel:+918149661830" 
+                    href="tel:08149661830" 
                     className="flex items-center gap-3 text-white font-bold hover:text-white/80 transition-colors duration-300"
                   >
                     <Phone className="w-4 h-4 text-white" />
-                    <span>+91 81496 61830</span>
+                    <span>081496 61830</span>
                   </a>
                 </div>
               </div>

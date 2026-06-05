@@ -142,7 +142,7 @@ export default function ServiceSidebar({ currentPath, hideContact, hideServices,
                     Visit Us:
                   </p>
                   <p className="font-semibold text-[15px] text-white/95 group-hover:text-accent transition-colors duration-300 leading-relaxed">
-                    Shop No 33, Mantra Mesmer Rd, Keshav Nagar, Mundhwa, Pune
+                    {siteConfig.contact.address}
                   </p>
                 </div>
               </a>

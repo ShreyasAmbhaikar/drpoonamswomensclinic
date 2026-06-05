@@ -179,8 +179,10 @@ export const AboutSection = () => {
               {/* Absolute Central Rotating Badge */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                 <RotatingTextPath 
-                  text="Book a Consultation • Book a Consultation • " 
+                  text="Dr. Poonam's Women's Clinic • Gynecologist • " 
                   radius={52} 
+                  fontSize={13}
+                  letterSpacing="0.09em"
                   className="shadow-xl bg-[#3f3747] text-white" 
                 />
               </div>

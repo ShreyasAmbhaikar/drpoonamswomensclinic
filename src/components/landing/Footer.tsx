@@ -112,21 +112,17 @@ export const Footer = () => {
             </ul>
             {/* Doctor Address & Phone interactive links */}
             <div className="flex flex-col gap-3.5 text-[16px] text-white/80 mt-2">
-              <a 
-                href="tel:09711929529" 
-                className="flex items-start gap-3 hover:text-accent transition-colors duration-300"
-              >
+              <div className="flex items-start gap-3 leading-normal">
                 <svg className="w-5 h-5 text-accent mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span>Call Doctor: 097119 29529</span>
-              </a>
-              <a 
-                href="tel:+918149661830" 
-                className="flex items-start gap-3 hover:text-accent transition-colors duration-300 pl-8 -mt-2"
-              >
-                <span>Call Doctor: +91 81496 61830</span>
-              </a>
+                <div>
+                  <span>Call Doctor: </span>
+                  <a href="tel:09711929529" className="hover:text-accent transition-colors duration-300">097119 29529</a>
+                  <span className="mx-1 text-white/50">/</span>
+                  <a href="tel:08149661830" className="hover:text-accent transition-colors duration-300">081496 61830</a>
+                </div>
+              </div>
               <a 
                 href="https://www.google.com/maps/place/Dr+Poonam's+Women's+Clinic+%7C+Gynecologist/data=!4m2!3m1!1s0x0:0xd39aed6b8c64a153?sa=X&ved=1t:2428&hl=en&ictx=111" 
                 target="_blank" 
@@ -137,7 +133,7 @@ export const Footer = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span>Shop No 33, Mantra Mesmer Rd, Keshav Nagar, Mundhwa, Pune</span>
+                <span>Shop No 33, Shopping Complex, Mantra Mesmer Rd, in front of Florida River Bank, Keshav Nagar, Mundhwa, Mundhawa, Pune, Maharashtra 411036</span>
               </a>
             </div>
           </div>

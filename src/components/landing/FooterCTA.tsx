@@ -16,7 +16,12 @@ export const FooterCTA = () => {
           </div>
           
           <div className="shrink-0 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-            <RotatingTextPath text="Book a Consultation * Book a Consultation * " radius={120} />
+            <RotatingTextPath 
+              text="Dr. Poonam's Women's Clinic • Gynecologist • Dr. Poonam's Women's Clinic • Gynecologist • " 
+              radius={120} 
+              fontSize={14.5}
+              letterSpacing="0.09em"
+            />
           </div>
         </div>
       </div>

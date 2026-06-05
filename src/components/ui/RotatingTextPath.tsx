@@ -4,10 +4,12 @@ import { cn } from "@/lib/utils";
 interface RotatingTextPathProps extends React.HTMLAttributes<HTMLDivElement> {
   text: string;
   radius?: number;
+  fontSize?: number;
+  letterSpacing?: string;
 }
 
 export const RotatingTextPath = React.forwardRef<HTMLDivElement, RotatingTextPathProps>(
-  ({ text, radius = 68, className, ...props }, ref) => {
+  ({ text, radius = 68, fontSize = 14, letterSpacing = "0.12em", className, ...props }, ref) => {
     const padding = 20; // safe padding to prevent text clipping
     const size = radius * 2 + padding * 2;
     const center = radius + padding;
@@ -31,8 +33,13 @@ export const RotatingTextPath = React.forwardRef<HTMLDivElement, RotatingTextPat
           className="animate-rotate-metal"
         >
           <path d={pathD} id={pathId} fill="none" />
-          <text fill="currentColor" fontSize="14" fontWeight="700" letterSpacing="0.12em">
-            <textPath href={`#${pathId}`} startOffset="0%">
+          <text fill="currentColor" fontSize={fontSize} fontWeight="700" style={{ letterSpacing }}>
+            <textPath 
+              href={`#${pathId}`} 
+              startOffset="0%"
+              textLength={Math.round(2 * Math.PI * radius)}
+              lengthAdjust="spacing"
+            >
               {text}
             </textPath>
           </text>

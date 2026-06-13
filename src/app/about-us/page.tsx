@@ -87,6 +87,16 @@ export default function AboutUsPage() {
                   </p>
                 </div>
                 
+                {/* Mobile-only Image (above the checks) */}
+                <div className="block lg:hidden mb-8">
+                  <img
+                    src="/images/doctor-consultation-desk.webp"
+                    alt="Dr. Poonam at her consultation desk inside Dr. Poonam's Women's Clinic"
+                    className="w-full h-auto rounded-[30px] shadow-xl"
+                    loading="lazy"
+                  />
+                </div>
+
                 {/* Check list */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex items-center gap-3">
@@ -109,7 +119,7 @@ export default function AboutUsPage() {
               </div>
 
               {/* Right Image */}
-              <div className="relative">
+              <div className="hidden lg:block relative">
                 <img
                   src="/images/doctor-consultation-desk.webp"
                   alt="Dr. Poonam at her consultation desk inside Dr. Poonam's Women's Clinic"
@@ -128,7 +138,7 @@ export default function AboutUsPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-[40px] lg:gap-[60px] items-center">
               
               {/* Doctor Image */}
-              <div className="lg:col-span-5 flex justify-center">
+              <div className="hidden lg:flex lg:col-span-5 justify-center">
                 <div className="relative w-full max-w-[400px] aspect-[4/5] rounded-[30px] overflow-hidden shadow-lg border-4 border-white">
                   <Image
                     src="/images/about-doctor-poonam.webp"
@@ -144,6 +154,18 @@ export default function AboutUsPage() {
                 <h4 className="text-accent text-[16px] font-bold tracking-wider uppercase mb-3">Meet Our Expert</h4>
                 <h2 className="text-[36px] md:text-[44px] font-bold text-primary mb-2">Dr. Poonam</h2>
                 <p className="text-[18px] text-accent font-semibold mb-6">Senior Consultant Obstetrician & Gynecologist</p>
+                
+                {/* Mobile-only Doctor Image */}
+                <div className="flex justify-center mb-6 lg:hidden">
+                  <div className="relative w-full aspect-[4/5] rounded-[30px] overflow-hidden shadow-lg border-4 border-white">
+                    <Image
+                      src="/images/about-doctor-poonam.webp"
+                      alt="Dr. Poonam"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
                 
                 {/* Qualifications box */}
                 <div className="bg-white rounded-[20px] p-6 border border-divider/10 shadow-sm mb-6">

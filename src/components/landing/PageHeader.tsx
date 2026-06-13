@@ -22,6 +22,7 @@ export default function PageHeader({ title, breadcrumbs, bgImage }: PageHeaderPr
             src={bgImage} 
             alt={title} 
             fill 
+            sizes="100vw"
             className="object-cover object-center z-0"
             priority
           />
@@ -39,7 +40,6 @@ export default function PageHeader({ title, breadcrumbs, bgImage }: PageHeaderPr
           <nav
             role="navigation"
             aria-label="Breadcrumbs"
-            className="animate-[fadeInUp_1s_ease-out]"
           >
             <ol className="flex items-center space-x-2 text-[16px] md:text-[18px] font-medium">
               {breadcrumbs.map((crumb, index) => {

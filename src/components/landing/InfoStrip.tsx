@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const InfoStrip = () => {
   return (
-    <div className="relative -mt-[50px] z-30 animate-fade-in-up" style={{ animationDelay: "0.8s" }}>
+    <div className="relative -mt-[50px] z-30">
       <div className="container mx-auto max-w-[1300px] px-4">
         <div className="bg-white rounded-[20px] shadow-[0_10px_40px_rgba(0,0,0,0.05)] p-[30px] md:p-[40px] grid grid-cols-1 lg:grid-cols-12 gap-[30px] lg:gap-0 items-center">
           

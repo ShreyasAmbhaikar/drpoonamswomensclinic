@@ -68,7 +68,7 @@ const TESTIMONIALS = [
 
 export const TestimonialsSection = () => {
   return (
-    <section className="py-[100px] bg-primary bg-[url('/images/testimonials-bg-metal.png')] bg-no-repeat bg-center bg-cover relative">
+    <section className="py-[100px] bg-primary bg-[url('/images/testimonials-bg-metal.webp')] bg-no-repeat bg-center bg-cover relative">
       <div className="container mx-auto max-w-[1300px] px-4">
         
         {/* Header Layout */}

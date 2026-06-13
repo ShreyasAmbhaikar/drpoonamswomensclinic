@@ -66,7 +66,7 @@ export const WhyChooseSection = () => {
             {/* Discover Us Button */}
             <Link 
               href="/contact-us" 
-              className="inline-flex items-center justify-center bg-accent text-white hover:bg-primary transition-all duration-300 font-bold rounded-[10px] text-[16px] py-[15px] px-[28px] gap-2 shadow-[0_4px_14px_rgba(90,74,102,0.2)] group"
+              className="hidden lg:inline-flex items-center justify-center bg-accent text-white hover:bg-primary transition-all duration-300 font-bold rounded-[10px] text-[16px] py-[15px] px-[28px] gap-2 shadow-[0_4px_14px_rgba(90,74,102,0.2)] group"
             >
               Discover Us
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
@@ -136,6 +136,17 @@ export const WhyChooseSection = () => {
             </div>
 
           </div>
+        </div>
+
+        {/* Mobile Discover Us Button */}
+        <div className="flex justify-center mt-8 lg:hidden animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+          <Link 
+            href="/contact-us" 
+            className="inline-flex items-center justify-center bg-accent text-white hover:bg-primary transition-all duration-300 font-bold rounded-[10px] text-[16px] py-[15px] px-[28px] gap-2 shadow-[0_4px_14px_rgba(90,74,102,0.2)] group"
+          >
+            Discover Us
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </Link>
         </div>
 
       </div>

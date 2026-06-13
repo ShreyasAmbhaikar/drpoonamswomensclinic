@@ -113,8 +113,55 @@ export const AboutSection = () => {
               </div>
             </div>
 
+            {/* Mobile-only Quadrants Grid with central rotating badge (rendered above the More About Us button) */}
+            <div className="block lg:hidden my-8 w-full max-w-[480px] mx-auto aspect-square relative">
+              <div className="grid grid-cols-2 gap-3 w-full h-full">
+                <div className="relative w-full h-full overflow-hidden rounded-tl-[100%] shadow-sm">
+                  <Image 
+                    src="/images/about-us-img-1.webp" 
+                    alt="IVF embryologist consultation" 
+                    fill 
+                    className="object-cover" 
+                  />
+                </div>
+                <div className="relative w-full h-full overflow-hidden rounded-tr-[100%] shadow-sm">
+                  <Image 
+                    src="/images/about-us-img-2.webp" 
+                    alt="Doctor with newborn baby" 
+                    fill 
+                    className="object-cover" 
+                  />
+                </div>
+                <div className="relative w-full h-full overflow-hidden rounded-bl-[100%] shadow-sm">
+                  <Image 
+                    src="/images/about-us-img-3.webp" 
+                    alt="Embryo laboratory monitoring" 
+                    fill 
+                    className="object-cover" 
+                  />
+                </div>
+                <div className="relative w-full h-full overflow-hidden rounded-br-[100%] shadow-sm">
+                  <Image 
+                    src="/images/about-us-img-4.webp" 
+                    alt="Compassionate IVF consult" 
+                    fill 
+                    className="object-cover" 
+                  />
+                </div>
+              </div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                <RotatingTextPath 
+                  text="Dr. Poonam's Women's Clinic • Gynecologist • " 
+                  radius={52} 
+                  fontSize={13}
+                  letterSpacing="0.09em"
+                  className="shadow-xl bg-[#3f3747] text-white" 
+                />
+              </div>
+            </div>
+
             {/* Button */}
-            <div className="mt-4">
+            <div className="mt-4 flex justify-center lg:justify-start">
               <Link 
                 href="/about-us/" 
                 className="inline-flex items-center justify-center bg-[#3f3747] hover:bg-accent text-white font-bold py-4 px-[30px] rounded-[10px] transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer text-[16px] shadow-sm"
@@ -131,7 +178,7 @@ export const AboutSection = () => {
           </div>
 
           {/* Right Side: Quadrants Image Grid */}
-          <div className="lg:col-span-6 flex justify-center lg:justify-end animate-fade-in-up">
+          <div className="hidden lg:flex lg:col-span-6 justify-center lg:justify-end animate-fade-in-up">
             <div className="relative w-full max-w-[560px] aspect-square">
               {/* Quadrant grid */}
               <div className="grid grid-cols-2 gap-3 w-full h-full">

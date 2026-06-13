@@ -20,12 +20,12 @@ export const HeroSection = () => {
               className="mb-[30px]"
             />
             
-            <p className="text-[16px] text-text mb-[40px] max-w-[500px] leading-[1.6em] animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+            <p className="text-[16px] text-text mb-[40px] max-w-[500px] leading-[1.6em]">
               Led by Senior Consultant Dr. Poonam (MBBS, DGO, PGDMCH), we provide compassionate, state-of-the-art women's healthcare services, specializing in normal delivery, pregnancy care, infertility/IUI, PCOD, and laparoscopic procedures.
             </p>
             
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 border-t border-divider pt-[40px] mb-[40px] animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+            <div className="grid grid-cols-3 gap-4 border-t border-divider pt-[40px] mb-[40px]">
               <div>
                 <h3 className="text-[32px] md:text-[36px] font-bold text-primary leading-[1.2em]">
                   <Counter end={15} suffix="+" />
@@ -47,7 +47,7 @@ export const HeroSection = () => {
             </div>
 
             {/* Buttons Container */}
-            <div className="flex flex-wrap items-center gap-[30px] animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
+            <div className="flex flex-wrap items-center gap-[30px]">
               <Link 
                 href="/contact-us" 
                 className="inline-flex items-center gap-2 bg-accent text-white font-bold text-[15px] px-[28px] py-[15px] rounded-[10px] hover:bg-primary transition-all duration-300 group"
@@ -72,10 +72,10 @@ export const HeroSection = () => {
 
           {/* Right Image (47% Width) */}
           <div className="w-full lg:w-[47%] relative lg:pl-[50px] flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[480px] animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+            <div className="relative w-full max-w-[480px]">
               
               {/* Image Container */}
-              <div className="relative rounded-[30px] overflow-hidden aspect-[1/1.12] w-full animate-[serviceratingmoveobject_3s_ease-in-out_infinite_alternate]">
+              <div className="relative rounded-[30px] overflow-hidden aspect-[1/1.12] w-full">
                 <Image 
                   src="/images/doctor-poonam-hero.webp" 
                   alt="Dr. Poonam consulting in her office at Dr. Poonam's Women's Clinic" 
@@ -87,7 +87,7 @@ export const HeroSection = () => {
               </div>
 
               {/* Floating Ratings Badge (Floats Up & Down) */}
-              <div className="absolute bottom-[40px] -left-[20px] md:bottom-[60px] md:-left-[30px] bg-white rounded-[20px] p-[20px] shadow-[0_10px_40px_rgba(0,0,0,0.08)] z-20 max-w-[280px] animate-float">
+              <div className="hidden md:block absolute bottom-[40px] -left-[20px] md:bottom-[60px] md:-left-[30px] bg-white rounded-[20px] p-[20px] shadow-[0_10px_40px_rgba(0,0,0,0.08)] z-20 max-w-[280px] animate-float">
                 <div className="flex flex-col gap-2">
                   {/* 5 Glowing Yellow Stars */}
                   <div className="flex gap-[4px]">
